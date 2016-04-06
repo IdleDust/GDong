@@ -12,19 +12,12 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
-    
     @IBOutlet weak var sendVerificationCodeButton: UIButton!
-    
     @IBOutlet weak var textVerificationTextField: UITextField!
-        
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
-    @IBOutlet weak var signUpButton: UIButton!
-    
+    @IBOutlet weak var signUpOrLoginButton: UIButton!
     @IBOutlet weak var SignUpIndicationButton: UIButton!
     @IBOutlet weak var LoginIndicationButton: UIButton!
-    
     @IBOutlet weak var forgetPasswordStackView: UIStackView!
     @IBOutlet weak var userAgreementStackView: UIStackView!
     
@@ -32,22 +25,28 @@ class ViewController: UIViewController {
     
     @IBAction func showSignUpTable(sender: AnyObject) {
         
+        signUpMode = true;
         let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
         SignUpIndicationButton.setTitleColor(customColor, forState: .Normal)
+        LoginIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         forgetPasswordStackView.hidden = true
         userAgreementStackView.hidden = false
+        signUpOrLoginButton.setTitle("注册", forState: .Normal)
+        textVerificationTextField.hidden = false
         
         for constraint in self.view.constraints {
             if constraint.identifier == "passwordTopCons" {
-                print(constraint)
+                constraint.constant = 65
             }
             
         }
+        sendVerificationCodeButton.hidden = false
+
     }
     
     @IBAction func showLoginTable(sender: AnyObject) {
         
-        
+        signUpMode = false;
         userAgreementStackView.hidden = true
         let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
         LoginIndicationButton.setTitleColor(customColor, forState: .Normal)
@@ -56,15 +55,22 @@ class ViewController: UIViewController {
         sendVerificationCodeButton.hidden = true
         textVerificationTextField.hidden = true
         
-//        let filterResults =  { $0.identifier == "checkmarkLeftMargin" }
-//        if (filterResults.count > 0) {
-//            checkmarkImageViewLeftMargin = filterResults[0]
-//        }
+        for constraint in self.view.constraints {
+            if constraint.identifier == "passwordTopCons" {
+                constraint.constant = 10
+            }
+            
+        }
+        signUpOrLoginButton.setTitle("登录", forState: .Normal)
     
     }
     
-    @IBAction func signUp(sender: AnyObject) {
-    
+    @IBAction func signUpOrLogin(sender: AnyObject) {
+        if(signUpMode == true){
+            //signing up
+        } else {
+            //Logining in
+        }
     
     }
     
@@ -92,17 +98,12 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        
+        print("view will appear")
         let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
         if(signUpMode == true){
             forgetPasswordStackView.hidden = true
             SignUpIndicationButton.setTitleColor(customColor, forState: .Normal)
             LoginIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
-        }
-        else {
-            userAgreementStackView.hidden = true
-            LoginIndicationButton.setTitleColor(customColor, forState: .Normal)
-            SignUpIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         }
     }
 

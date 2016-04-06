@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="height" constant="45" id="g6S-kq-EBa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="T1K-D0-FTd"/>
@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="seD-rN-7q1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="S6J-NR-9AD"/>
@@ -107,7 +107,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meS-ha-2Q0"/>
+                                    <action selector="signUpOrLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NeP-Er-U4z"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-rp-Xr3" userLabel="forgetPassword">
@@ -244,7 +244,7 @@
                         <outlet property="passwordTextField" destination="bgy-IB-MGC" id="i67-mG-iYc"/>
                         <outlet property="phoneNumberTextField" destination="rhy-MP-xPM" id="H37-T7-rkg"/>
                         <outlet property="sendVerificationCodeButton" destination="kWV-gF-jK1" id="Tat-7S-37Q"/>
-                        <outlet property="signUpButton" destination="u9m-FH-uaP" id="YWD-MH-fMS"/>
+                        <outlet property="signUpOrLoginButton" destination="u9m-FH-uaP" id="694-gB-gDm"/>
                         <outlet property="textVerificationTextField" destination="N94-X4-JIF" id="pmm-d3-AZU"/>
                         <outlet property="userAgreementStackView" destination="sGA-z9-PYy" id="drm-Wu-Uo1"/>
                     </connections>
