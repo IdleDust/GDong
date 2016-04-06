@@ -138,3 +138,5 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+
+/GDong/Assets.xcassets
