@@ -22,17 +22,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var userAgreementStackView: UIStackView!
     
     var signUpMode = true;
-    
+    let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
     @IBAction func showSignUpTable(sender: AnyObject) {
         
         signUpMode = true;
-        let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
         SignUpIndicationButton.setTitleColor(customColor, forState: .Normal)
+        addBottomBorder(SignUpIndicationButton, tag: "signUpBottomBorder")
         LoginIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        deleteBottomBorder(LoginIndicationButton, tag: "loginBottomBorder")
+        
         forgetPasswordStackView.hidden = true
         userAgreementStackView.hidden = false
         signUpOrLoginButton.setTitle("注册", forState: .Normal)
         textVerificationTextField.hidden = false
+        
         
         for constraint in self.view.constraints {
             if constraint.identifier == "passwordTopCons" {
@@ -41,6 +44,7 @@ class ViewController: UIViewController {
             
         }
         sendVerificationCodeButton.hidden = false
+        
 
     }
     
@@ -48,9 +52,11 @@ class ViewController: UIViewController {
         
         signUpMode = false;
         userAgreementStackView.hidden = true
-        let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
+        
         LoginIndicationButton.setTitleColor(customColor, forState: .Normal)
+        addBottomBorder(LoginIndicationButton, tag: "loginBottomBorder")
         SignUpIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        deleteBottomBorder(SignUpIndicationButton, tag: "signUpBottomBorder")
         forgetPasswordStackView.hidden = false
         sendVerificationCodeButton.hidden = true
         textVerificationTextField.hidden = true
@@ -68,8 +74,10 @@ class ViewController: UIViewController {
     @IBAction func signUpOrLogin(sender: AnyObject) {
         if(signUpMode == true){
             //signing up
+            print("Signning up")
         } else {
             //Logining in
+            print("logging in")
         }
     
     }
@@ -85,8 +93,28 @@ class ViewController: UIViewController {
         textField.layer.masksToBounds = true
     }
     
+    func addBottomBorder(button: UIButton, tag: String) {
+        let bottomBorder = CALayer()
+        let width = CGFloat(1.2)
+        bottomBorder.borderColor = customColor.CGColor
+        bottomBorder.frame = CGRect(x: 0, y: button.frame.size.height-width, width: button.frame.size.width, height: button.frame.size.height)
+        bottomBorder.borderWidth = width
+        bottomBorder.name = tag
+        button.layer.addSublayer(bottomBorder)
+        button.layer.masksToBounds = true
+    }
+    
+    func deleteBottomBorder(button: UIButton, tag: String) {
+        for layer in button.layer.sublayers! {
+            if(layer.name == tag){
+                layer.removeFromSuperlayer()
+            }
+        }
+    }
+    
     
     override func viewDidLayoutSubviews() {
+        print("viewdidlayoutSubview loads")
         
         addTextFieldBorder(phoneNumberTextField)
         addTextFieldBorder(textVerificationTextField)
@@ -99,11 +127,12 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         print("view will appear")
-        let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
+        
         if(signUpMode == true){
             forgetPasswordStackView.hidden = true
             SignUpIndicationButton.setTitleColor(customColor, forState: .Normal)
             LoginIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+            addBottomBorder(SignUpIndicationButton, tag: "signUpBottomBorder")
         }
     }
 
