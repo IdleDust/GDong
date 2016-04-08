@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     var signUpMode = true;
     let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
+    
     @IBAction func showSignUpTable(sender: AnyObject) {
         
         signUpMode = true;
@@ -82,16 +83,16 @@ class ViewController: UIViewController {
     
     }
     
-    func addTextFieldBorder(textField: UITextField){
-        let border = CALayer()
-        let width = CGFloat(1.2)
-        border.borderColor = UIColor.lightGrayColor().CGColor
-        border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width:  textField.frame.size.width, height: textField.frame.size.height)
-
-        border.borderWidth = width
-        textField.layer.addSublayer(border)
-        textField.layer.masksToBounds = true
-    }
+//    func addTextFieldBorder(textField: UITextField){
+//        let border = CALayer()
+//        let width = CGFloat(1.2)
+//        border.borderColor = UIColor.lightGrayColor().CGColor
+//        border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width:  textField.frame.size.width, height: textField.frame.size.height)
+//
+//        border.borderWidth = width
+//        textField.layer.addSublayer(border)
+//        textField.layer.masksToBounds = true
+//    }
     
     func addBottomBorder(button: UIButton, tag: String) {
         let bottomBorder = CALayer()
@@ -114,11 +115,10 @@ class ViewController: UIViewController {
     
     
     override func viewDidLayoutSubviews() {
-        print("viewdidlayoutSubview loads")
         
-        addTextFieldBorder(phoneNumberTextField)
-        addTextFieldBorder(textVerificationTextField)
-        addTextFieldBorder(passwordTextField)
+        Lib!.addTextFieldBorder(phoneNumberTextField)
+        Lib!.addTextFieldBorder(textVerificationTextField)
+        Lib!.addTextFieldBorder(passwordTextField)
         
         sendVerificationCodeButton.layer.borderWidth = 2.0
         sendVerificationCodeButton.layer.borderColor = (UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0.61)).CGColor
@@ -126,7 +126,6 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        print("view will appear")
         
         if(signUpMode == true){
             forgetPasswordStackView.hidden = true

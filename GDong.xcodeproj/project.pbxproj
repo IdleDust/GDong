@@ -12,6 +12,9 @@
 		49F7A40F1CB43B2C00448BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F7A40D1CB43B2C00448BCA /* Main.storyboard */; };
 		49F7A4111CB43B2C00448BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F7A4101CB43B2C00448BCA /* Assets.xcassets */; };
 		49F7A4141CB43B2C00448BCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F7A4121CB43B2C00448BCA /* LaunchScreen.storyboard */; };
+		49F7A41C1CB7685900448BCA /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A41B1CB7685900448BCA /* FindPasswordViewController.swift */; };
+		49F7A41E1CB7699D00448BCA /* LIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A41D1CB7699D00448BCA /* LIB.swift */; };
+		49F7A4201CB772F300448BCA /* SetNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		49F7A4101CB43B2C00448BCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F7A4131CB43B2C00448BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49F7A4151CB43B2C00448BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F7A41B1CB7685900448BCA /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		49F7A41D1CB7699D00448BCA /* LIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIB.swift; sourceTree = "<group>"; };
+		49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +62,10 @@
 			children = (
 				49F7A4091CB43B2C00448BCA /* AppDelegate.swift */,
 				49F7A40B1CB43B2C00448BCA /* ViewController.swift */,
+				49F7A41D1CB7699D00448BCA /* LIB.swift */,
+				49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */,
 				49F7A40D1CB43B2C00448BCA /* Main.storyboard */,
+				49F7A41B1CB7685900448BCA /* FindPasswordViewController.swift */,
 				49F7A4101CB43B2C00448BCA /* Assets.xcassets */,
 				49F7A4121CB43B2C00448BCA /* LaunchScreen.storyboard */,
 				49F7A4151CB43B2C00448BCA /* Info.plist */,
@@ -136,7 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F7A40C1CB43B2C00448BCA /* ViewController.swift in Sources */,
+				49F7A41E1CB7699D00448BCA /* LIB.swift in Sources */,
+				49F7A41C1CB7685900448BCA /* FindPasswordViewController.swift in Sources */,
 				49F7A40A1CB43B2C00448BCA /* AppDelegate.swift in Sources */,
+				49F7A4201CB772F300448BCA /* SetNewPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +298,7 @@
 				49F7A41A1CB43B2C00448BCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
