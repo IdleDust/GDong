@@ -12,8 +12,15 @@ class HomeTableViewController: UITableViewController {
 
     @IBOutlet weak var leftButtonItem: UIBarButtonItem!
     
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 660.0
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         
         let logo = UIImage(named: "果动.png")
         self.navigationItem.titleView = UIImageView(image:logo)
@@ -62,6 +69,10 @@ class HomeTableViewController: UITableViewController {
 
         return cell
     }
+    
+    //override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    //    return 360.0
+    //}
 
 
     /*
