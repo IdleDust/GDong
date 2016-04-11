@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="446" id="drf-J0-iYY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="446" id="drf-J0-iYY" customClass="EventTableViewCell" customModule="GDong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="446"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drf-J0-iYY" id="vcJ-x4-HKI">
@@ -468,6 +468,14 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eventIntroImage" destination="rUx-7a-aVb" id="41Z-a3-Oen"/>
+                                    <outlet property="eventPrice" destination="LHX-cb-LVM" id="nVI-HS-k6b"/>
+                                    <outlet property="eventSubtitle" destination="QHj-Cu-eAL" id="QNG-mi-rkb"/>
+                                    <outlet property="eventTitle" destination="exf-YX-DDW" id="4El-aH-5RM"/>
+                                    <outlet property="postedBy" destination="104-zl-EcC" id="gw9-KX-BL8"/>
+                                    <outlet property="totalSignedUp" destination="cGM-va-OKr" id="Bge-CC-4G9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
