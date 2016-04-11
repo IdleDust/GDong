@@ -16,7 +16,7 @@ class SetNewPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -30,6 +30,12 @@ class SetNewPasswordViewController: UIViewController {
         Lib!.addTextFieldBorder(textVerificationCode,width:2, color: color)
         Lib!.addTextFieldBorder(newPassword, width: 2, color:color)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation

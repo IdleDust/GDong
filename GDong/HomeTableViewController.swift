@@ -10,14 +10,31 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
+    @IBOutlet weak var leftButtonItem: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logo = UIImage(named: "果动.png")
+        self.navigationItem.titleView = UIImageView(image:logo)
+        self.navigationItem.titleView!.sizeToFit()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //custom barbuttonitem image
+        let button = UIButton()
+        button.frame = CGRectMake(0, 0, 66, 66)
+        button.setImage(UIImage(named: "user"), forState: .Normal)
+        leftButtonItem.customView = button
+        self.navigationItem.leftBarButtonItem = leftButtonItem
+        button.addTarget(self, action: "userLogin", forControlEvents: UIControlEvents.TouchUpInside)
+        //add space to leftButtonItem
+        let negativeSpacer:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+        negativeSpacer.width = -20; // set the value you need
+        self.navigationItem.leftBarButtonItems = [negativeSpacer,leftButtonItem]
+        
+    }
+    
+    func userLogin() {
+        performSegueWithIdentifier("userLogin", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {

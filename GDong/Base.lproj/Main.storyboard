@@ -52,7 +52,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="果动LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="kX6-3d-H8f">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="果动LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="kX6-3d-H8f">
                                 <rect key="frame" x="267" y="104" width="67" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="duI-LT-bCO"/>
@@ -144,13 +144,6 @@
                                     <constraint firstAttribute="width" constant="138" id="ul6-u2-hnr"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="jSy-Mk-P7h">
-                                <rect key="frame" x="281" y="540" width="38" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="I5Y-Q0-PCv"/>
-                                    <constraint firstAttribute="width" constant="38" id="psJ-yb-FHZ"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWV-gF-jK1">
                                 <rect key="frame" x="460" y="189" width="85" height="33"/>
                                 <constraints>
@@ -201,6 +194,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hB-Yo-S5d">
+                                <rect key="frame" x="284" y="540" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LuP-cc-Iho"/>
+                                    <constraint firstAttribute="width" secondItem="7hB-Yo-S5d" secondAttribute="height" multiplier="1:1" id="hhq-rm-plo"/>
+                                    <constraint firstAttribute="width" constant="40" id="vqi-zv-ULD"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="close"/>
+                                <connections>
+                                    <segue destination="BTy-MC-tWD" kind="presentation" id="3Ai-GY-VBT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -217,9 +222,9 @@
                             <constraint firstItem="AKR-9p-k1n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHt-Fz-36v"/>
                             <constraint firstItem="u9m-FH-uaP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="InQ-ou-jTH"/>
                             <constraint firstItem="hmx-rp-Xr3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J9k-Wh-8r4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jSy-Mk-P7h" secondAttribute="bottom" constant="20" id="JWN-d5-ytd"/>
                             <constraint firstItem="N94-X4-JIF" firstAttribute="top" secondItem="rhy-MP-xPM" secondAttribute="bottom" constant="10" id="JnX-RB-iDy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u9m-FH-uaP" secondAttribute="trailing" constant="35" id="K0l-Rc-YRT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7hB-Yo-S5d" secondAttribute="bottom" constant="20" id="L49-Tm-JBk"/>
                             <constraint firstItem="bgy-IB-MGC" firstAttribute="top" secondItem="N94-X4-JIF" secondAttribute="bottom" constant="10" id="OtQ-iI-48m"/>
                             <constraint firstItem="AKR-9p-k1n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="W4l-8E-pU9"/>
                             <constraint firstItem="hmx-rp-Xr3" firstAttribute="top" secondItem="u9m-FH-uaP" secondAttribute="bottom" constant="8" id="X2x-UX-oOS"/>
@@ -231,8 +236,8 @@
                             <constraint firstItem="rhy-MP-xPM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nAT-g4-6Ei"/>
                             <constraint firstItem="N94-X4-JIF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pux-zV-ggE"/>
                             <constraint firstItem="u9m-FH-uaP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="scd-0l-ih2"/>
-                            <constraint firstItem="jSy-Mk-P7h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uaj-Ol-zCs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bgy-IB-MGC" secondAttribute="trailing" constant="35" id="vrC-wY-94e"/>
+                            <constraint firstItem="7hB-Yo-S5d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w6U-d5-NAk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N94-X4-JIF" secondAttribute="trailing" constant="35" id="z1U-iA-AAy"/>
                         </constraints>
                         <variation key="default">
@@ -258,7 +263,7 @@
             </objects>
             <point key="canvasLocation" x="1287" y="451"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home Table View Controller-->
         <scene sceneID="2sv-PC-74a">
             <objects>
                 <tableViewController id="wM9-pJ-qje" customClass="HomeTableViewController" customModule="GDong" customModuleProvider="target" sceneMemberID="viewController">
@@ -394,9 +399,16 @@
                             <outlet property="delegate" destination="wM9-pJ-qje" id="8JL-p2-Pbe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="9mc-rn-QsX">
-                        <barButtonItem key="backBarButtonItem" title=" " id="bZf-ii-nUY"/>
+                    <navigationItem key="navigationItem" id="9mc-rn-QsX">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="izZ-e1-Sgk">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="userLogin" id="dyz-vr-ise"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="leftButtonItem" destination="izZ-e1-Sgk" id="lch-nX-jpa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLQ-e4-9yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -675,6 +687,7 @@
         <image name="果动LOGO" width="59" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dyz-vr-ise"/>
         <segue reference="Sfu-th-5tz"/>
     </inferredMetricsTieBreakers>
 </document>
