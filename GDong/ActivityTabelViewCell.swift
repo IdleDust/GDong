@@ -8,13 +8,13 @@
 
 import UIKit
 
-class EventTableViewCell: UITableViewCell {
+class ActivityTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var eventIntroImage: UIImageView!
+    @IBOutlet weak var activityIntroImage: UIImageView!
     
-    @IBOutlet weak var eventTitle: UILabel!
-    @IBOutlet weak var eventSubtitle: UILabel!
-    @IBOutlet weak var eventPrice: UILabel!
+    @IBOutlet weak var activityTitle: UILabel!
+    @IBOutlet weak var activitySubtitle: UILabel!
+    @IBOutlet weak var activityPrice: UILabel!
     @IBOutlet weak var postedBy: UIImageView!
     @IBOutlet weak var totalSignedUp: UILabel!
     
