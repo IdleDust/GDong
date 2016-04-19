@@ -10,15 +10,15 @@ import UIKit
 
 class ActivityPicTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    //@IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var activityTitle: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        print(self.frame.size.width)
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

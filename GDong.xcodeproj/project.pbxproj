@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		49107E8F1CBC66F60044552E /* ActivityTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */; };
-		49107E911CBC6D3A0044552E /* MyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E901CBC6D3A0044552E /* MyEvent.swift */; };
+		49107E911CBC6D3A0044552E /* MyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E901CBC6D3A0044552E /* MyActivity.swift */; };
 		49107E931CBC7C3F0044552E /* ActivityDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */; };
-		494D7B9A1CBE1A9600BA9B7E /* ActivityPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D7B991CBE1A9600BA9B7E /* ActivityPicTableViewCell.swift */; };
 		49F7A40A1CB43B2C00448BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A4091CB43B2C00448BCA /* AppDelegate.swift */; };
 		49F7A40C1CB43B2C00448BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A40B1CB43B2C00448BCA /* ViewController.swift */; };
 		49F7A40F1CB43B2C00448BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F7A40D1CB43B2C00448BCA /* Main.storyboard */; };
@@ -24,9 +23,8 @@
 
 /* Begin PBXFileReference section */
 		49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTabelViewCell.swift; sourceTree = "<group>"; };
-		49107E901CBC6D3A0044552E /* MyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEvent.swift; sourceTree = "<group>"; };
+		49107E901CBC6D3A0044552E /* MyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivity.swift; sourceTree = "<group>"; };
 		49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailTableViewController.swift; sourceTree = "<group>"; };
-		494D7B991CBE1A9600BA9B7E /* ActivityPicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPicTableViewCell.swift; sourceTree = "<group>"; };
 		49F7A4061CB43B2C00448BCA /* GDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F7A4091CB43B2C00448BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F7A40B1CB43B2C00448BCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,11 +73,10 @@
 				49F7A41D1CB7699D00448BCA /* LIB.swift */,
 				49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */,
 				49F7A40D1CB43B2C00448BCA /* Main.storyboard */,
-				494D7B991CBE1A9600BA9B7E /* ActivityPicTableViewCell.swift */,
 				49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */,
 				49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */,
 				49F7A4211CB8606200448BCA /* HomeTableViewController.swift */,
-				49107E901CBC6D3A0044552E /* MyEvent.swift */,
+				49107E901CBC6D3A0044552E /* MyActivity.swift */,
 				49F7A41B1CB7685900448BCA /* FindPasswordViewController.swift */,
 				49F7A4101CB43B2C00448BCA /* Assets.xcassets */,
 				49F7A4121CB43B2C00448BCA /* LaunchScreen.storyboard */,
@@ -159,8 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49107E911CBC6D3A0044552E /* MyEvent.swift in Sources */,
-				494D7B9A1CBE1A9600BA9B7E /* ActivityPicTableViewCell.swift in Sources */,
+				49107E911CBC6D3A0044552E /* MyActivity.swift in Sources */,
 				49F7A4221CB8606200448BCA /* HomeTableViewController.swift in Sources */,
 				49F7A40C1CB43B2C00448BCA /* ViewController.swift in Sources */,
 				49107E931CBC7C3F0044552E /* ActivityDetailTableViewController.swift in Sources */,
@@ -282,6 +278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GDong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GDong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GDong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GDong;
 				PRODUCT_NAME = "$(TARGET_NAME)";

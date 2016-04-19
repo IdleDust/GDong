@@ -9,63 +9,123 @@
 import UIKit
 
 class ActivityDetailTableViewController: UITableViewController{
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var activityDetailTitle: UILabel!
 
+    //MARK: variables for section0: show images in scrollview with pagecontrol
+    var images:[UIImage] = []
+    var imageframe: CGRect = CGRectMake(0, 0, 0, 0)
+    var pageControl:UIPageControl?
     
     
-    
-    
+    //MARK - adjust cell height automatically
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 600
+        tableView.estimatedRowHeight = 300
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+
+    // MARK: BRING PAGECONTROL TO FRONT
+    override func viewDidLayoutSubviews() {
+        for subView in self.view.subviews {
+            if subView is UIPageControl {
+                self.view.bringSubviewToFront(subView)
+            }
+        }
+        super.viewDidLayoutSubviews()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewdidload")
+        loadImage()
         configureTableView()
+        scrollView.delegate = self
+        addImageViewToScrollView()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let width = self.view.frame.width
+        let ratio = CGFloat(468/750.0)
+        pageControl = UIPageControl(frame: CGRectMake(0, width*ratio-20, width, 20))
+        configurePageControl()
+        self.view.addSubview(pageControl!)
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("viewDidAppear")
+        pageControl!.addTarget(self, action: Selector("changePage:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func loadImage(){
+        for i in 1..<7 {
+            let name = "page" + String(i)
+            let image = UIImage(named: name)
+            images.append(image!)
+        }
+    }
+    
+    func configurePageControl() {
+        self.pageControl!.numberOfPages = images.count
+        self.pageControl!.currentPage = 0
+        self.pageControl!.backgroundColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0)
+        self.pageControl!.pageIndicatorTintColor = UIColor.whiteColor()
+        self.pageControl!.currentPageIndicatorTintColor = Lib!.customColor
+    }
+    
+    func addImageViewToScrollView() {
+        
+        let width = self.view.frame.width
+        let ratio = CGFloat(468/750.0)
+        
+        for index in 0..<images.count {
+            imageframe.origin.x = width * CGFloat(index)
+            let frame = CGRectMake(0, 0, width, width * ratio)
+            imageframe.size = frame.size
+            scrollView.pagingEnabled = true
+            
+            let imageSubView = UIImageView(frame: imageframe)
+            imageSubView.image = images[index]
+            imageSubView.contentMode = UIViewContentMode.ScaleAspectFill
+            scrollView.addSubview(imageSubView)
+        }
+        
+        scrollView.contentSize = CGSizeMake(width * CGFloat(images.count), width*ratio)
+    }
+    
+    
+    
+    //MARK: EVENT RESPONSE METHODS
+    func changePage(sender: AnyObject) -> () {
+        //print("Change page")
+        let x = CGFloat(pageControl!.currentPage) * self.view.frame.size.width
+        print(x)
+        scrollView.setContentOffset(CGPointMake(x, 0), animated: true)
+    }
+    
+    
+    //MARK: UISCROLLVIEWDELEGATE Method
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        //print("Scroll view did end decelerating")
+        let view = self.view.viewWithTag(101)
+        if(scrollView == view){
+            let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+            pageControl!.currentPage = Int(pageNumber)
+        }
     }
 
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 3
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 2
-    }
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("activityPic", forIndexPath: indexPath) as! ActivityPicTableViewCell
-        if (indexPath.section == 0) {
-            
-                // return left/right label style cell
-            //cell.textLabel?.text = "Section 0"
-            //cell.activityTitle.text = "Title"
-            
-        } else if (indexPath.section == 1){
-            cell.textLabel?.text = "Section 1"
-        
-        } else {
-            cell.textLabel?.text = "Section 2"
-        }
-
-        return cell
-    
     }
 
     

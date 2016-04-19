@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyEvent: NSObject {
+class MyActivity: NSObject {
     
     
     
