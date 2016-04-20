@@ -12,6 +12,7 @@ class ActivityDetailTableViewController: UITableViewController{
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var activityDetailTitle: UILabel!
+    @IBOutlet var activityDetailTableView: UITableView!
 
     //MARK: variables for section0: show images in scrollview with pagecontrol
     var images:[UIImage] = []
@@ -63,6 +64,18 @@ class ActivityDetailTableViewController: UITableViewController{
     override func viewDidAppear(animated: Bool) {
         print("viewDidAppear")
         pageControl!.addTarget(self, action: Selector("changePage:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+      
+        let footer:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        footer.contentView.backgroundColor = UIColor.lightGrayColor()
+        footer.alpha = 0.2
+        footer.textLabel!.text = ""
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat(10)
     }
     
     func loadImage(){
