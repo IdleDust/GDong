@@ -63,11 +63,56 @@ class ActivityDetailTableViewController: UITableViewController{
     
     override func viewDidAppear(animated: Bool) {
         print("viewDidAppear")
-        pageControl!.addTarget(self, action: Selector("changePage:"), forControlEvents: UIControlEvents.ValueChanged)
+        pageControl!.addTarget(self, action: #selector(ActivityDetailTableViewController.changePage(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 4
+    }
+    
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if(section == 3){
+//            return 10+1
+//        }
+//        else {
+//            return super.tableView(tableView, numberOfRowsInSection: section)
+//        }
+//    }
+//    
+//    
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+//        if(indexPath.section != 3 && indexPath.row != 0) {
+//            return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+//        }
+//        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTableViewCell
+//        cell.commentTableViewCellUserPic.image = UIImage(named: "comment")
+//        cell.commentTableViewCellUserName.text = "Juan Cehen"
+//        cell.commentTableViewCellUserComment.text = "new comment"
+//        
+//        return cell
+//    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.None
+    }
+    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+        return super.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath)
+    }
+    
+    
+    
+    //MARK - Custom Footer For Each Section
     override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-      
         let footer:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         footer.contentView.backgroundColor = UIColor.lightGrayColor()
         footer.alpha = 0.2
@@ -110,13 +155,13 @@ class ActivityDetailTableViewController: UITableViewController{
             imageSubView.contentMode = UIViewContentMode.ScaleAspectFill
             scrollView.addSubview(imageSubView)
         }
-        
         scrollView.contentSize = CGSizeMake(width * CGFloat(images.count), width*ratio)
     }
     
     
     
     //MARK: EVENT RESPONSE METHODS
+    
     func changePage(sender: AnyObject) -> () {
         //print("Change page")
         let x = CGFloat(pageControl!.currentPage) * self.view.frame.size.width
@@ -126,6 +171,7 @@ class ActivityDetailTableViewController: UITableViewController{
     
     
     //MARK: UISCROLLVIEWDELEGATE Method
+    
     override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         //print("Scroll view did end decelerating")
         let view = self.view.viewWithTag(101)

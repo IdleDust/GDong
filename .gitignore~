@@ -139,6 +139,9 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
+GDong/Assets.xcassets
+GDong/Assets.xcassets/**
+GDong/Assets.xcassets/*
 
 
 

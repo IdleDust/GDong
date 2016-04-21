@@ -33,7 +33,7 @@ class HomeTableViewController: UITableViewController {
         button.setImage(UIImage(named: "user"), forState: .Normal)
         leftButtonItem.customView = button
         self.navigationItem.leftBarButtonItem = leftButtonItem
-        button.addTarget(self, action: "userLogin", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: #selector(HomeTableViewController.userLogin), forControlEvents: UIControlEvents.TouchUpInside)
         //add space to leftButtonItem
         let negativeSpacer:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         negativeSpacer.width = -20; // set the value you need
