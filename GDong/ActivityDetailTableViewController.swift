@@ -95,19 +95,6 @@ class ActivityDetailTableViewController: UITableViewController{
 //        return cell
 //    }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-    
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.None
-    }
-    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
-        return super.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath)
-    }
     
     
     
