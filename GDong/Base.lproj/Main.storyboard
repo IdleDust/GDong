@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BTy-MC-tWD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j39-53-JUI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -273,7 +273,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="446" id="drf-J0-iYY" customClass="ActivityTableViewCell" customModule="GDong" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="446"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="446"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drf-J0-iYY" id="vcJ-x4-HKI">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="445"/>
@@ -512,7 +512,7 @@
                             <tableViewSection headerTitle="" footerTitle="footer" id="LZj-hz-Zjn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityDetailTablePic" rowHeight="427" id="1zg-Xm-Peg">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="427"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="427"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" tableViewCell="1zg-Xm-Peg" id="lK0-FY-fvL">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="427"/>
@@ -562,7 +562,7 @@
                             <tableViewSection footerTitle="footer" id="1RX-as-LCT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityDetailTableClub" rowHeight="110" id="JJP-4n-bG2">
-                                        <rect key="frame" x="0.0" y="519" width="600" height="110"/>
+                                        <rect key="frame" x="0.0" y="455" width="600" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JJP-4n-bG2" id="HmD-Rf-cDN">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
@@ -648,7 +648,7 @@
                             <tableViewSection footerTitle=" footer" id="gfX-QQ-vKQ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityDetailTime" rowHeight="77" id="u9G-Du-5Ev">
-                                        <rect key="frame" x="0.0" y="657" width="600" height="77"/>
+                                        <rect key="frame" x="0.0" y="593" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u9G-Du-5Ev" id="4el-FJ-Vr7">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -691,7 +691,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityDetailAddress" rowHeight="77" id="D9y-B7-GNY">
-                                        <rect key="frame" x="0.0" y="734" width="600" height="77"/>
+                                        <rect key="frame" x="0.0" y="670" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D9y-B7-GNY" id="5kx-yY-NgL">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -728,7 +728,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityDetailTelephone" rowHeight="77" id="7Mq-f0-cYI">
-                                        <rect key="frame" x="0.0" y="811" width="600" height="77"/>
+                                        <rect key="frame" x="0.0" y="747" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Mq-f0-cYI" id="9Nl-me-d8i">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -765,7 +765,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityDetailIntroduction" rowHeight="197" id="tBE-Gg-zOj">
-                                        <rect key="frame" x="0.0" y="888" width="600" height="197"/>
+                                        <rect key="frame" x="0.0" y="824" width="600" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tBE-Gg-zOj" id="zfR-eW-ZVg">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="197"/>
@@ -816,7 +816,7 @@
                             <tableViewSection footerTitle=" footer" id="1MQ-g1-nYC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityDetailCommentHeader" rowHeight="113" id="DWk-dd-2gX">
-                                        <rect key="frame" x="0.0" y="1113" width="600" height="113"/>
+                                        <rect key="frame" x="0.0" y="1049" width="600" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DWk-dd-2gX" id="XKk-ry-nwk">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
@@ -863,7 +863,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentSection" id="Kwu-t6-L3a">
-                                        <rect key="frame" x="0.0" y="1226" width="600" height="300"/>
+                                        <rect key="frame" x="0.0" y="1162" width="600" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kwu-t6-L3a" id="B31-GN-c8Z">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
@@ -960,6 +960,166 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivy-eY-hps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2532" y="1241"/>
+        </scene>
+        <!--Club Detail Table View Controller-->
+        <scene sceneID="Shi-nn-iYn">
+            <objects>
+                <tableViewController id="j39-53-JUI" customClass="ClubDetailTableViewController" customModule="GDong" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="563" sectionHeaderHeight="28" sectionFooterHeight="28" id="riC-ZN-vHz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selectionStyle="default" indentationWidth="10" reuseIdentifier="clubPic" rowHeight="563" id="pmG-oH-fRk" customClass="ClubPhotoTableViewCell" customModule="GDong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="563"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" tableViewCell="pmG-oH-fRk" id="662-1b-Qk5">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="562"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" image="sea" translatesAutoresizingMaskIntoConstraints="NO" id="oew-r0-dbc">
+                                            <rect key="frame" x="0.0" y="8" width="600" height="538"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" secondItem="oew-r0-dbc" secondAttribute="width" multiplier="89:100" id="qmh-QS-30e"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" misplaced="YES" text="让你的孩子成为快乐的冒险家" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVx-6T-goS">
+                                            <rect key="frame" x="8" y="504" width="584" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" red="0.88235294119999996" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" text="爱游.亲子俱乐部" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G5-5x-Usj">
+                                            <rect key="frame" x="8" y="461" width="584" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XVx-6T-goS" firstAttribute="top" secondItem="2G5-5x-Usj" secondAttribute="bottom" constant="20" id="32D-bz-SCC"/>
+                                        <constraint firstItem="2G5-5x-Usj" firstAttribute="leading" secondItem="662-1b-Qk5" secondAttribute="leading" constant="8" id="3H6-eL-B0r"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="XVx-6T-goS" secondAttribute="bottom" constant="30" id="6in-ga-4ww"/>
+                                        <constraint firstItem="2G5-5x-Usj" firstAttribute="leading" secondItem="oew-r0-dbc" secondAttribute="trailing" constant="-592" id="Dtd-lg-niv"/>
+                                        <constraint firstAttribute="trailing" secondItem="XVx-6T-goS" secondAttribute="trailing" constant="8" id="VGj-cT-IxT"/>
+                                        <constraint firstItem="XVx-6T-goS" firstAttribute="leading" secondItem="662-1b-Qk5" secondAttribute="leading" constant="8" id="VaX-eQ-mm8"/>
+                                        <constraint firstAttribute="bottom" secondItem="oew-r0-dbc" secondAttribute="bottom" constant="16" id="Z3Y-Sg-1g6"/>
+                                        <constraint firstItem="oew-r0-dbc" firstAttribute="width" secondItem="662-1b-Qk5" secondAttribute="width" id="aVZ-7V-g8u"/>
+                                        <constraint firstItem="oew-r0-dbc" firstAttribute="leading" secondItem="662-1b-Qk5" secondAttribute="leading" id="baa-mh-aQb"/>
+                                        <constraint firstItem="2G5-5x-Usj" firstAttribute="leading" secondItem="oew-r0-dbc" secondAttribute="trailing" constant="-592" id="eDX-4P-sPn"/>
+                                        <constraint firstAttribute="bottom" secondItem="XVx-6T-goS" secondAttribute="bottom" constant="16" id="tmv-fE-XMt"/>
+                                        <constraint firstItem="oew-r0-dbc" firstAttribute="top" secondItem="662-1b-Qk5" secondAttribute="top" id="ug6-co-DEk"/>
+                                        <constraint firstAttribute="trailing" secondItem="oew-r0-dbc" secondAttribute="trailing" id="uvd-00-S8p"/>
+                                        <constraint firstAttribute="trailing" secondItem="2G5-5x-Usj" secondAttribute="trailing" constant="8" id="v5A-db-MER"/>
+                                        <constraint firstItem="XVx-6T-goS" firstAttribute="bottom" secondItem="oew-r0-dbc" secondAttribute="bottom" constant="20" id="ytg-ZY-Q4U"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Dtd-lg-niv"/>
+                                            <exclude reference="eDX-4P-sPn"/>
+                                            <exclude reference="tmv-fE-XMt"/>
+                                            <exclude reference="ytg-ZY-Q4U"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="clubName" destination="2G5-5x-Usj" id="QMP-DE-VFz"/>
+                                    <outlet property="clubPhoto" destination="oew-r0-dbc" id="UYG-04-eTh"/>
+                                    <outlet property="clubSubName" destination="XVx-6T-goS" id="xmc-Wi-HTP"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="clubIntroduction" rowHeight="202" id="cjU-Ph-bSc" customClass="ClubIntroTableViewCell" customModule="GDong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="591" width="600" height="202"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" tableViewCell="cjU-Ph-bSc" id="CgN-s2-P1u">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="201"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQf-Es-tWa">
+                                            <rect key="frame" x="-2216" y="40" width="2778" height="140"/>
+                                            <string key="text">I have posted a few times on handling dynamic type including the need to increase the height of table view rows as the font size grows. However the assumption was that all cells in the table view had the same height. In this post I am going to do a detailed walk through of setting up a table view cell with auto layout that has a variable row height.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="yQf-Es-tWa" secondAttribute="bottom" constant="21" id="9RD-4O-vAu"/>
+                                        <constraint firstAttribute="trailing" secondItem="yQf-Es-tWa" secondAttribute="trailing" constant="38" id="Vbf-C3-9Xl"/>
+                                        <constraint firstItem="yQf-Es-tWa" firstAttribute="leading" secondItem="CgN-s2-P1u" secondAttribute="leading" constant="38" id="fue-aU-oKE"/>
+                                        <constraint firstItem="yQf-Es-tWa" firstAttribute="top" secondItem="CgN-s2-P1u" secondAttribute="top" constant="40" id="hF8-1W-6oN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="clubIntroduction" destination="yQf-Es-tWa" id="CpY-IO-kfr"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teacherIntro" rowHeight="81" id="A6m-vS-WD9" customClass="TeacherIntroTitleTableViewCell" customModule="GDong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="793" width="600" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A6m-vS-WD9" id="I7B-1A-XoG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teacher" translatesAutoresizingMaskIntoConstraints="NO" id="7rI-Cb-Lw6">
+                                            <rect key="frame" x="27" y="22" width="46" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="Lwj-h6-9Lb"/>
+                                                <constraint firstAttribute="width" constant="46" id="ZnW-hF-jZP"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="老师介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpH-Et-DAw">
+                                            <rect key="frame" x="87" y="22" width="137" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="137" id="Jdm-4x-eee"/>
+                                                <constraint firstAttribute="height" constant="46" id="rvX-rB-2Wl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7rI-Cb-Lw6" firstAttribute="leading" secondItem="I7B-1A-XoG" secondAttribute="leading" constant="27" id="2vG-Kb-pL7"/>
+                                        <constraint firstItem="HpH-Et-DAw" firstAttribute="leading" secondItem="7rI-Cb-Lw6" secondAttribute="trailing" constant="14" id="G9M-yr-CJ9"/>
+                                        <constraint firstAttribute="bottom" secondItem="HpH-Et-DAw" secondAttribute="bottom" constant="12" id="MCH-7u-LQR"/>
+                                        <constraint firstItem="7rI-Cb-Lw6" firstAttribute="top" secondItem="I7B-1A-XoG" secondAttribute="top" constant="22" id="OMR-O8-bHp"/>
+                                        <constraint firstItem="HpH-Et-DAw" firstAttribute="top" secondItem="I7B-1A-XoG" secondAttribute="top" constant="22" id="YgM-ZY-zX5"/>
+                                        <constraint firstAttribute="bottom" secondItem="7rI-Cb-Lw6" secondAttribute="bottom" constant="12" id="e9c-91-woa"/>
+                                        <constraint firstItem="HpH-Et-DAw" firstAttribute="leading" secondItem="7rI-Cb-Lw6" secondAttribute="trailing" constant="14" id="gXZ-zD-0pH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="teacherIntroIcon" destination="7rI-Cb-Lw6" id="pIY-CS-Itf"/>
+                                    <outlet property="teacherIntroTitleLabel" destination="HpH-Et-DAw" id="mBh-MD-QLI"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="912" id="Avo-Gj-nmX" customClass="ClubPhotoTableViewCell" customModule="GDong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="874" width="600" height="912"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Avo-Gj-nmX" id="zKp-yR-MM4">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="911"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="prototype" rowHeight="924" id="HlT-8t-Cjj" customClass="ClubPhotoTableViewCell" customModule="GDong" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1786" width="600" height="924"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HlT-8t-Cjj" id="B3k-yK-qfG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="923"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="j39-53-JUI" id="dTg-9y-5ne"/>
+                            <outlet property="delegate" destination="j39-53-JUI" id="6dc-mo-kTH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mGu-R0-QfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3157" y="1241"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i21-qx-WJT">
@@ -1235,6 +1395,8 @@
         <image name="detail" width="24" height="24"/>
         <image name="photo" width="355" height="222"/>
         <image name="right" width="29" height="29"/>
+        <image name="sea" width="600" height="425"/>
+        <image name="teacher" width="20" height="20"/>
         <image name="tell" width="24" height="24"/>
         <image name="time" width="24" height="24"/>
         <image name="果动LOGO" width="59" height="48"/>
