@@ -27,6 +27,6 @@ class FindPasswordViewController: UIViewController {
     
     override func viewDidLayoutSubviews(){
         let color = UIColor(red: 239/255, green: 240/255, blue: 241/255, alpha: 1)
-        Lib!.addTextFieldBorder(userPhoneNumber,width:2, color: color)
+        Lib.addTextFieldBorder(userPhoneNumber,width:2, color: color)
     }
 }

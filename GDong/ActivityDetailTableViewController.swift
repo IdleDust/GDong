@@ -43,6 +43,7 @@ class ActivityDetailTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setToolbarHidden(false, animated: true)
         print("viewdidload")
         loadImage()
         configureTableView()
@@ -64,6 +65,11 @@ class ActivityDetailTableViewController: UITableViewController{
     override func viewDidAppear(animated: Bool) {
         print("viewDidAppear")
         pageControl!.addTarget(self, action: #selector(ActivityDetailTableViewController.changePage(_:)), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.setToolbarHidden(true, animated: true)
+
     }
     
     
@@ -123,7 +129,7 @@ class ActivityDetailTableViewController: UITableViewController{
         self.pageControl!.currentPage = 0
         self.pageControl!.backgroundColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0)
         self.pageControl!.pageIndicatorTintColor = UIColor.whiteColor()
-        self.pageControl!.currentPageIndicatorTintColor = Lib!.customColor
+        self.pageControl!.currentPageIndicatorTintColor = Lib.customColor
     }
     
     func addImageViewToScrollView() {

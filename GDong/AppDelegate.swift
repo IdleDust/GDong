@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyleBlackTranslucent
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        Lib = LIB()
         return true
     }
 

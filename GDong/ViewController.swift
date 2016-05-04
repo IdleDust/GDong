@@ -106,9 +106,9 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         
-        Lib!.addTextFieldBorder(phoneNumberTextField)
-        Lib!.addTextFieldBorder(textVerificationTextField)
-        Lib!.addTextFieldBorder(passwordTextField)
+        Lib.addTextFieldBorder(phoneNumberTextField)
+        Lib.addTextFieldBorder(textVerificationTextField)
+        Lib.addTextFieldBorder(passwordTextField)
         
         sendVerificationCodeButton.layer.borderWidth = 2.0
         sendVerificationCodeButton.layer.borderColor = (UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0.61)).CGColor

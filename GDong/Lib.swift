@@ -8,13 +8,13 @@
 
 import UIKit
 
-var Lib:LIB?
+//var Lib:LIB?
 
-class LIB: NSObject {
+class Lib: NSObject {
     
-    let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
+    static let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
 
-    func addTextFieldBorder(textField: UITextField, width:CGFloat = CGFloat(1.2), color: UIColor=UIColor.lightGrayColor()){
+    static func addTextFieldBorder(textField: UITextField, width:CGFloat = CGFloat(1.2), color: UIColor=UIColor.lightGrayColor()){
         
         let border = CALayer()
         border.borderColor = color.CGColor

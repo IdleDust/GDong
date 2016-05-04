@@ -10,10 +10,13 @@
 		49107E8F1CBC66F60044552E /* ActivityTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */; };
 		49107E911CBC6D3A0044552E /* MyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E901CBC6D3A0044552E /* MyActivity.swift */; };
 		49107E931CBC7C3F0044552E /* ActivityDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */; };
+		497A19F41CD03EA7003546B3 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A19F31CD03EA7003546B3 /* OrderTableViewController.swift */; };
 		49828A871CC9E51F00CFE283 /* ClubPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A861CC9E51F00CFE283 /* ClubPhotoTableViewCell.swift */; };
 		49828A891CC9E5CA00CFE283 /* ClubDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A881CC9E5CA00CFE283 /* ClubDetailTableViewController.swift */; };
 		49828A8B1CC9FD8E00CFE283 /* ClubIntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A8A1CC9FD8E00CFE283 /* ClubIntroTableViewCell.swift */; };
 		49828A8F1CCA019400CFE283 /* TeacherIntroTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A8E1CCA019400CFE283 /* TeacherIntroTitleTableViewCell.swift */; };
+		49828A911CCD58E600CFE283 /* TeacherListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A901CCD58E600CFE283 /* TeacherListTableViewCell.swift */; };
+		49828A931CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A921CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift */; };
 		49A8A7451CC83F0E00F8DC5D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A8A7441CC83F0E00F8DC5D /* CommentTableViewCell.swift */; };
 		49F7A40A1CB43B2C00448BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A4091CB43B2C00448BCA /* AppDelegate.swift */; };
 		49F7A40C1CB43B2C00448BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A40B1CB43B2C00448BCA /* ViewController.swift */; };
@@ -21,7 +24,7 @@
 		49F7A4111CB43B2C00448BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F7A4101CB43B2C00448BCA /* Assets.xcassets */; };
 		49F7A4141CB43B2C00448BCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F7A4121CB43B2C00448BCA /* LaunchScreen.storyboard */; };
 		49F7A41C1CB7685900448BCA /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A41B1CB7685900448BCA /* FindPasswordViewController.swift */; };
-		49F7A41E1CB7699D00448BCA /* LIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A41D1CB7699D00448BCA /* LIB.swift */; };
+		49F7A41E1CB7699D00448BCA /* Lib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A41D1CB7699D00448BCA /* Lib.swift */; };
 		49F7A4201CB772F300448BCA /* SetNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */; };
 		49F7A4221CB8606200448BCA /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F7A4211CB8606200448BCA /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,10 +33,13 @@
 		49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTabelViewCell.swift; sourceTree = "<group>"; };
 		49107E901CBC6D3A0044552E /* MyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivity.swift; sourceTree = "<group>"; };
 		49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailTableViewController.swift; sourceTree = "<group>"; };
+		497A19F31CD03EA7003546B3 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		49828A861CC9E51F00CFE283 /* ClubPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		49828A881CC9E5CA00CFE283 /* ClubDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailTableViewController.swift; sourceTree = "<group>"; };
 		49828A8A1CC9FD8E00CFE283 /* ClubIntroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubIntroTableViewCell.swift; sourceTree = "<group>"; };
 		49828A8E1CCA019400CFE283 /* TeacherIntroTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherIntroTitleTableViewCell.swift; sourceTree = "<group>"; };
+		49828A901CCD58E600CFE283 /* TeacherListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherListTableViewCell.swift; sourceTree = "<group>"; };
+		49828A921CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubActivitiesTitleTableViewCell.swift; sourceTree = "<group>"; };
 		49A8A7441CC83F0E00F8DC5D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		49F7A4061CB43B2C00448BCA /* GDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F7A4091CB43B2C00448BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +49,7 @@
 		49F7A4131CB43B2C00448BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49F7A4151CB43B2C00448BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49F7A41B1CB7685900448BCA /* FindPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
-		49F7A41D1CB7699D00448BCA /* LIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIB.swift; sourceTree = "<group>"; };
+		49F7A41D1CB7699D00448BCA /* Lib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lib.swift; sourceTree = "<group>"; };
 		49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNewPasswordViewController.swift; sourceTree = "<group>"; };
 		49F7A4211CB8606200448BCA /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +71,8 @@
 				49828A8E1CCA019400CFE283 /* TeacherIntroTitleTableViewCell.swift */,
 				49828A861CC9E51F00CFE283 /* ClubPhotoTableViewCell.swift */,
 				49828A8A1CC9FD8E00CFE283 /* ClubIntroTableViewCell.swift */,
+				49828A901CCD58E600CFE283 /* TeacherListTableViewCell.swift */,
+				49828A921CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift */,
 			);
 			name = ClubDetail;
 			sourceTree = "<group>";
@@ -101,9 +109,10 @@
 				49828A8C1CC9FF5400CFE283 /* ClubDetail */,
 				49F7A4091CB43B2C00448BCA /* AppDelegate.swift */,
 				49F7A40B1CB43B2C00448BCA /* ViewController.swift */,
-				49F7A41D1CB7699D00448BCA /* LIB.swift */,
+				49F7A41D1CB7699D00448BCA /* Lib.swift */,
 				49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */,
 				49F7A40D1CB43B2C00448BCA /* Main.storyboard */,
+				497A19F31CD03EA7003546B3 /* OrderTableViewController.swift */,
 				49828A881CC9E5CA00CFE283 /* ClubDetailTableViewController.swift */,
 				49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */,
 				49F7A4211CB8606200448BCA /* HomeTableViewController.swift */,
@@ -188,13 +197,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				49828A8F1CCA019400CFE283 /* TeacherIntroTitleTableViewCell.swift in Sources */,
+				49828A931CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift in Sources */,
+				497A19F41CD03EA7003546B3 /* OrderTableViewController.swift in Sources */,
 				49107E911CBC6D3A0044552E /* MyActivity.swift in Sources */,
+				49828A911CCD58E600CFE283 /* TeacherListTableViewCell.swift in Sources */,
 				49F7A4221CB8606200448BCA /* HomeTableViewController.swift in Sources */,
 				49828A891CC9E5CA00CFE283 /* ClubDetailTableViewController.swift in Sources */,
 				49F7A40C1CB43B2C00448BCA /* ViewController.swift in Sources */,
 				49107E931CBC7C3F0044552E /* ActivityDetailTableViewController.swift in Sources */,
 				49828A8B1CC9FD8E00CFE283 /* ClubIntroTableViewCell.swift in Sources */,
-				49F7A41E1CB7699D00448BCA /* LIB.swift in Sources */,
+				49F7A41E1CB7699D00448BCA /* Lib.swift in Sources */,
 				49F7A41C1CB7685900448BCA /* FindPasswordViewController.swift in Sources */,
 				49107E8F1CBC66F60044552E /* ActivityTabelViewCell.swift in Sources */,
 				49A8A7451CC83F0E00F8DC5D /* CommentTableViewCell.swift in Sources */,

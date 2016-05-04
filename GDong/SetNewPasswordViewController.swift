@@ -27,8 +27,8 @@ class SetNewPasswordViewController: UIViewController {
     
     override func viewDidLayoutSubviews(){
         let color = UIColor(red: 239/255, green: 240/255, blue: 241/255, alpha: 1)
-        Lib!.addTextFieldBorder(textVerificationCode,width:2, color: color)
-        Lib!.addTextFieldBorder(newPassword, width: 2, color:color)
+        Lib.addTextFieldBorder(textVerificationCode,width:2, color: color)
+        Lib.addTextFieldBorder(newPassword, width: 2, color:color)
     }
     
     override func viewWillAppear(animated: Bool) {
