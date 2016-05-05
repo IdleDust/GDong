@@ -960,11 +960,11 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="总共：" id="Agv-kN-M5V"/>
+                        <barButtonItem title="109元/2人" width="106" id="Agv-kN-M5V"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ij8-W4-rSf"/>
-                        <barButtonItem title="支付" id="wNv-ur-1us">
+                        <barButtonItem title="支付" width="109" id="wNv-ur-1us">
                             <connections>
-                                <segue destination="5ae-54-LYp" kind="show" id="MlB-Wz-CFZ"/>
+                                <segue destination="5ae-54-LYp" kind="show" identifier="toSignUp" id="Oid-19-2fl"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -972,6 +972,8 @@
                     <connections>
                         <outlet property="activityDetailTableView" destination="ZnJ-p3-qyZ" id="vSS-vw-2FN"/>
                         <outlet property="activityDetailTitle" destination="kG6-hP-Gwj" id="yoo-l3-JLu"/>
+                        <outlet property="leftBarButton" destination="Agv-kN-M5V" id="WIm-NL-PFD"/>
+                        <outlet property="rightBarButton" destination="wNv-ur-1us" id="k4B-gS-nBO"/>
                         <outlet property="scrollView" destination="D7Z-GK-zjc" id="hJ8-iC-Uks"/>
                     </connections>
                 </tableViewController>
@@ -2268,6 +2270,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Sfu-th-5tz"/>
         <segue reference="wIs-X8-EJb"/>
-        <segue reference="MlB-Wz-CFZ"/>
+        <segue reference="Oid-19-2fl"/>
     </inferredMetricsTieBreakers>
 </document>

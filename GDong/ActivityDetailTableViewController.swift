@@ -13,7 +13,12 @@ class ActivityDetailTableViewController: UITableViewController{
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var activityDetailTitle: UILabel!
     @IBOutlet var activityDetailTableView: UITableView!
+    
+    
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
 
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    
     //MARK: variables for section0: show images in scrollview with pagecontrol
     var images:[UIImage] = []
     var imageframe: CGRect = CGRectMake(0, 0, 0, 0)
@@ -30,15 +35,8 @@ class ActivityDetailTableViewController: UITableViewController{
         return UITableViewAutomaticDimension
     }
 
-    // MARK: BRING PAGECONTROL TO FRONT
-    override func viewDidLayoutSubviews() {
-        for subView in self.view.subviews {
-            if subView is UIPageControl {
-                self.view.bringSubviewToFront(subView)
-            }
-        }
-        super.viewDidLayoutSubviews()
-    }
+
+    //Mark - life cycle
     
     
     override func viewDidLoad() {
@@ -55,6 +53,7 @@ class ActivityDetailTableViewController: UITableViewController{
         pageControl = UIPageControl(frame: CGRectMake(0, width*ratio-20, width, 20))
         configurePageControl()
         self.view.addSubview(pageControl!)
+        customBarbuttonitem()
     }
     
     
@@ -69,40 +68,29 @@ class ActivityDetailTableViewController: UITableViewController{
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.setToolbarHidden(true, animated: true)
-
+        
     }
+    
+    // MARK: BRING PAGECONTROL TO FRONT
+    override func viewDidLayoutSubviews() {
+        for subView in self.view.subviews {
+            if subView is UIPageControl {
+                self.view.bringSubviewToFront(subView)
+            }
+        }
+        super.viewDidLayoutSubviews()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    //Mark - UITableViewDelegate
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
     }
-    
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if(section == 3){
-//            return 10+1
-//        }
-//        else {
-//            return super.tableView(tableView, numberOfRowsInSection: section)
-//        }
-//    }
-//    
-//    
-    
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        if(indexPath.section != 3 && indexPath.row != 0) {
-//            return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
-//        }
-//        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTableViewCell
-//        cell.commentTableViewCellUserPic.image = UIImage(named: "comment")
-//        cell.commentTableViewCellUserName.text = "Juan Cehen"
-//        cell.commentTableViewCellUserComment.text = "new comment"
-//        
-//        return cell
-//    }
-    
-    
-    
     
     //MARK - Custom Footer For Each Section
     override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
@@ -115,6 +103,36 @@ class ActivityDetailTableViewController: UITableViewController{
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat(10)
     }
+    
+    //MARK: UISCROLLVIEWDELEGATE
+    
+    
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        //print("Scroll view did end decelerating")
+        let view = self.view.viewWithTag(101)
+        if(scrollView == view){
+            let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+            pageControl!.currentPage = Int(pageNumber)
+        }
+    }
+
+    //Mark - Event response
+    
+    
+    func changePage(sender: AnyObject) -> () {
+        //print("Change page")
+        let x = CGFloat(pageControl!.currentPage) * self.view.frame.size.width
+        print(x)
+        scrollView.setContentOffset(CGPointMake(x, 0), animated: true)
+    }
+    
+    func toSignUp(sender: AnyObject?){
+        performSegueWithIdentifier("toSignUp", sender: sender)
+    }
+    
+
+    //Mark - private methods
+    
     
     func loadImage(){
         for i in 1..<7 {
@@ -150,35 +168,26 @@ class ActivityDetailTableViewController: UITableViewController{
         }
         scrollView.contentSize = CGSizeMake(width * CGFloat(images.count), width*ratio)
     }
+
+    //Mark - getters and setters
     
     
-    
-    //MARK: EVENT RESPONSE METHODS
-    
-    func changePage(sender: AnyObject) -> () {
-        //print("Change page")
-        let x = CGFloat(pageControl!.currentPage) * self.view.frame.size.width
-        print(x)
-        scrollView.setContentOffset(CGPointMake(x, 0), animated: true)
-    }
-    
-    
-    //MARK: UISCROLLVIEWDELEGATE Method
-    
-    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        //print("Scroll view did end decelerating")
-        let view = self.view.viewWithTag(101)
-        if(scrollView == view){
-            let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-            pageControl!.currentPage = Int(pageNumber)
-        }
+    //set bottom barbuttonitem    
+    func customBarbuttonitem(){
+        
+        let button:UIButton = UIButton()
+        button.setTitle("109元/2人", forState: .Normal)
+        button.setTitleColor(Lib.customColor, forState: .Normal)
+        button.frame = CGRectMake(0, 0, 100, 35)
+        leftBarButton.customView = button
+        
+        let signUpButton:UIButton = UIButton()
+        signUpButton.setTitle("立即报名", forState: .Normal)
+        signUpButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        signUpButton.backgroundColor = Lib.customColor
+        signUpButton.frame = CGRectMake(0, 0, 125, 35)
+        signUpButton.addTarget(self, action: #selector(ActivityDetailTableViewController.toSignUp), forControlEvents: UIControlEvents.TouchUpInside)
+        rightBarButton.customView = signUpButton
     }
 
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    
 }
