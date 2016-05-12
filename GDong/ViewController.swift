@@ -76,11 +76,12 @@ class ViewController: UIViewController {
         if(signUpMode == true){
             //signing up
             print("Signning up")
+            
         } else {
             //Logining in
             print("logging in")
+            performSegueWithIdentifier("loginSucceed", sender: sender)
         }
-    
     }
     
     

@@ -170,7 +170,10 @@ class OrderTableViewController: UITableViewController {
         
     }
  
- 
+    func paySuccess(sender: AnyObject?) {
+        performSegueWithIdentifier("paySuccessed", sender: sender)
+    }
+    
     
     
     //Mark - private methods
@@ -186,6 +189,7 @@ class OrderTableViewController: UITableViewController {
         priceButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         priceButton.setTitleColor(Lib.customColor, forState: .Normal)
         priceButton.frame = CGRectMake(0, 0, 100, 35)
+        
         totalPriceBarButton.customView = priceButton
     }
     
@@ -202,6 +206,8 @@ class OrderTableViewController: UITableViewController {
         payButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         payButton.backgroundColor = Lib.customColor
         payButton.frame = CGRectMake(0, 0, 100, 35)
+        
+        payButton.addTarget(self, action: #selector(OrderTableViewController.paySuccess), forControlEvents: UIControlEvents.TouchUpInside)
         payBarButton.customView = payButton
     }
     

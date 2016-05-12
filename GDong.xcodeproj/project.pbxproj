@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490C77941CE3D2630016AD09 /* AccountManagementctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C77931CE3D2630016AD09 /* AccountManagementctionViewController.swift */; };
+		490C77981CE40A9D0016AD09 /* AccountManagementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C77971CE40A9D0016AD09 /* AccountManagementCollectionViewCell.swift */; };
 		49107E8F1CBC66F60044552E /* ActivityTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */; };
 		49107E911CBC6D3A0044552E /* MyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E901CBC6D3A0044552E /* MyActivity.swift */; };
 		49107E931CBC7C3F0044552E /* ActivityDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490C77931CE3D2630016AD09 /* AccountManagementctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagementctionViewController.swift; path = ../AccountManagementctionViewController.swift; sourceTree = "<group>"; };
+		490C77971CE40A9D0016AD09 /* AccountManagementCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManagementCollectionViewCell.swift; sourceTree = "<group>"; };
 		49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTabelViewCell.swift; sourceTree = "<group>"; };
 		49107E901CBC6D3A0044552E /* MyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivity.swift; sourceTree = "<group>"; };
 		49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -108,10 +112,12 @@
 				49828A8D1CC9FF7900CFE283 /* ActivityDetail */,
 				49828A8C1CC9FF5400CFE283 /* ClubDetail */,
 				49F7A4091CB43B2C00448BCA /* AppDelegate.swift */,
+				490C77931CE3D2630016AD09 /* AccountManagementctionViewController.swift */,
 				49F7A40B1CB43B2C00448BCA /* ViewController.swift */,
 				49F7A41D1CB7699D00448BCA /* Lib.swift */,
 				49F7A41F1CB772F300448BCA /* SetNewPasswordViewController.swift */,
 				49F7A40D1CB43B2C00448BCA /* Main.storyboard */,
+				490C77971CE40A9D0016AD09 /* AccountManagementCollectionViewCell.swift */,
 				497A19F31CD03EA7003546B3 /* OrderTableViewController.swift */,
 				49828A881CC9E5CA00CFE283 /* ClubDetailTableViewController.swift */,
 				49107E921CBC7C3F0044552E /* ActivityDetailTableViewController.swift */,
@@ -201,6 +207,7 @@
 				497A19F41CD03EA7003546B3 /* OrderTableViewController.swift in Sources */,
 				49107E911CBC6D3A0044552E /* MyActivity.swift in Sources */,
 				49828A911CCD58E600CFE283 /* TeacherListTableViewCell.swift in Sources */,
+				490C77981CE40A9D0016AD09 /* AccountManagementCollectionViewCell.swift in Sources */,
 				49F7A4221CB8606200448BCA /* HomeTableViewController.swift in Sources */,
 				49828A891CC9E5CA00CFE283 /* ClubDetailTableViewController.swift in Sources */,
 				49F7A40C1CB43B2C00448BCA /* ViewController.swift in Sources */,
@@ -209,6 +216,7 @@
 				49F7A41E1CB7699D00448BCA /* Lib.swift in Sources */,
 				49F7A41C1CB7685900448BCA /* FindPasswordViewController.swift in Sources */,
 				49107E8F1CBC66F60044552E /* ActivityTabelViewCell.swift in Sources */,
+				490C77941CE3D2630016AD09 /* AccountManagementctionViewController.swift in Sources */,
 				49A8A7451CC83F0E00F8DC5D /* CommentTableViewCell.swift in Sources */,
 				49F7A40A1CB43B2C00448BCA /* AppDelegate.swift in Sources */,
 				49828A871CC9E51F00CFE283 /* ClubPhotoTableViewCell.swift in Sources */,

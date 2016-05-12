@@ -130,6 +130,7 @@ class ActivityDetailTableViewController: UITableViewController{
         performSegueWithIdentifier("toSignUp", sender: sender)
     }
     
+    
 
     //Mark - private methods
     
