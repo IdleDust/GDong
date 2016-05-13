@@ -14,6 +14,7 @@ class Lib: NSObject {
     
     static let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
     static let darkerBlueColor = UIColor(red: 86/255.0, green: 197/255.0, blue: 188/255.0, alpha: 1)
+    static let calenderBackgroundColor = UIColor(red: 87/255.0, green: 212/255.0, blue: 209/255.0, alpha: 1)
 
     static func addTextFieldBorder(textField: UITextField, width:CGFloat = CGFloat(1.2), color: UIColor=UIColor.lightGrayColor()){
         
@@ -24,6 +25,12 @@ class Lib: NSObject {
         border.borderWidth = width
         textField.layer.addSublayer(border)
         textField.layer.masksToBounds = true
+    }
+    
+    static func addUIButtonBorder(button: UIButton){
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = (UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0.61)).CGColor
+        button.layer.cornerRadius = 10
     }
     
     

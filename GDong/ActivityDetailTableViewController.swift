@@ -14,9 +14,7 @@ class ActivityDetailTableViewController: UITableViewController{
     @IBOutlet weak var activityDetailTitle: UILabel!
     @IBOutlet var activityDetailTableView: UITableView!
     
-    
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
-
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     //MARK: variables for section0: show images in scrollview with pagecontrol
@@ -84,10 +82,9 @@ class ActivityDetailTableViewController: UITableViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
 
     //Mark - UITableViewDelegate
-    
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
     }
@@ -104,9 +101,9 @@ class ActivityDetailTableViewController: UITableViewController{
         return CGFloat(10)
     }
     
+    
+    
     //MARK: UISCROLLVIEWDELEGATE
-    
-    
     override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         //print("Scroll view did end decelerating")
         let view = self.view.viewWithTag(101)
@@ -117,8 +114,6 @@ class ActivityDetailTableViewController: UITableViewController{
     }
 
     //Mark - Event response
-    
-    
     func changePage(sender: AnyObject) -> () {
         //print("Change page")
         let x = CGFloat(pageControl!.currentPage) * self.view.frame.size.width
@@ -133,8 +128,6 @@ class ActivityDetailTableViewController: UITableViewController{
     
 
     //Mark - private methods
-    
-    
     func loadImage(){
         for i in 1..<7 {
             let name = "page" + String(i)
