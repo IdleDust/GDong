@@ -132,7 +132,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if  segue.identifier == "loginSucceed" {
+            //print("segue---")
+            if let destination = segue.destinationViewController as? UINavigationController{
+                if let viewContr = destination.viewControllers[0] as? AccountManagementCollectionViewController{
+                    viewContr.loggedIn = true
+                    //print("segue result: \(viewContr.loggedIn)")
+
+                }
+            }
+        }
+    }
 
 
 }
+
 

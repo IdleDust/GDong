@@ -11,8 +11,6 @@ import UIKit
 class CalenderTableViewController: UITableViewController {
     
     var numberOfActivities:Int = 1
-    var pageIndication:Int = -1 //mark which of the page we currently on
-    let pageTitle:[String] = ["活动日程", "订单管理", "消息", "邀请有礼", "优惠礼券", "报名信息", "我的收藏", "小秘书", "设置"]
     
     //MARK - adjust cell height automatically
     func configureTableView() {
@@ -26,17 +24,11 @@ class CalenderTableViewController: UITableViewController {
     }
 
     func setNavigationBarTitle(){
-        if(pageIndication < 0 || pageIndication >= pageTitle.count) {
-            print("PAGE NUMBER ERROR!!! Recovered to 0 instead.")
-            self.title = pageTitle[pageIndication]
-        } else {
-            self.title = pageTitle[pageIndication]
-        }
+        self.title = Lib.pageName[0]
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(20)]
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        print("pageIndication is: \(pageIndication)")
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -55,21 +47,10 @@ class CalenderTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(pageIndication == 0){
-            if(numberOfActivities == 0){
-                return numberOfActivities+1;
-            } else {
-                return numberOfActivities;
-            }
-        }else if(pageIndication == 1){
-           return 3
-            //revise here~~~~~~~~~~~~~
+        if(numberOfActivities == 0){
+            return numberOfActivities+1;
         } else {
-            if(numberOfActivities == 0){
-                return numberOfActivities+1;
-            } else {
-                return numberOfActivities;
-            }
+            return numberOfActivities;
         }
     }
 

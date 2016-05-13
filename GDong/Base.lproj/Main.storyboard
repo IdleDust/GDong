@@ -112,6 +112,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Zhb-aJ-jXz" id="sCu-DP-wK8"/>
+                        <outlet property="userImage" destination="f53-mX-jjj" id="tRG-sn-V5y"/>
+                        <outlet property="userName" destination="Zr4-QX-Zqg" id="2T7-J3-hjz"/>
                         <segue destination="9aZ-Eo-Oi7" kind="show" identifier="showCalenderSegue" id="9NO-DB-3DO"/>
                         <segue destination="SHG-E1-9u8" kind="show" identifier="showAllOrdersSegue" id="hM8-2g-Jl4"/>
                     </connections>
@@ -555,9 +557,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpOrLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NeP-Er-U4z"/>
-                                    <segue destination="qTu-Qv-zEX" kind="popoverPresentation" identifier="loginSucceed" popoverAnchorView="u9m-FH-uaP" id="wpg-G0-G8d">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hmx-rp-Xr3" userLabel="forgetPassword">
@@ -706,6 +705,7 @@
                         <outlet property="signUpOrLoginButton" destination="u9m-FH-uaP" id="694-gB-gDm"/>
                         <outlet property="textVerificationTextField" destination="N94-X4-JIF" id="pmm-d3-AZU"/>
                         <outlet property="userAgreementStackView" destination="sGA-z9-PYy" id="drm-Wu-Uo1"/>
+                        <segue destination="qTu-Qv-zEX" kind="presentation" identifier="loginSucceed" id="Nip-wH-UVo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -2823,6 +2823,10 @@
         <scene sceneID="bk7-fH-L19">
             <objects>
                 <viewController id="Una-A9-BgZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Srj-Nm-RSD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ALa-gP-f0l"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jMt-RI-Mcn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2857,9 +2861,9 @@
         <image name="果动LOGO" width="59" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QQT-eD-Fra"/>
         <segue reference="McG-hv-iKV"/>
-        <segue reference="f8T-Bc-lnJ"/>
+        <segue reference="Sfu-th-5tz"/>
+        <segue reference="gUU-PY-pjf"/>
         <segue reference="Oid-19-2fl"/>
     </inferredMetricsTieBreakers>
 </document>

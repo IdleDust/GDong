@@ -11,10 +11,12 @@ import UIKit
 class AccountManagementCollectionViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    
     var screenWidth: CGFloat?
     var imageSet:[UIImage]?
-    let imageDescription:[String] = ["活动日程", "订单管理", "消息", "邀请有礼", "优惠礼券", "报名信息", "我的收藏", "小秘书", "设置"]
-    
+    var loggedIn:Bool = false
     
     
     //Mark - life cycle
@@ -23,7 +25,7 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
         initCollectionView()
         navigationController?.navigationBar.barTintColor = Lib.darkerBlueColor
         self.view.backgroundColor = Lib.darkerBlueColor
-        
+        setUserLogStatus()
     }
     
     
@@ -43,7 +45,7 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
         print(cellNumber)
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("gridCell", forIndexPath: indexPath) as! AccountManagementCollectionViewCell
         cell.cellImage.image = imageSet![cellNumber]
-        cell.cellTitle.text = imageDescription[cellNumber]
+        cell.cellTitle.text = Lib.pageName[cellNumber]
         cell.layer.borderColor = UIColor.lightGrayColor().CGColor
         cell.layer.borderWidth = 1.0
         return cell
@@ -84,16 +86,26 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
             }
         }
     }
+    
+    func setUserLogStatus(){
+        if(!loggedIn) {
+            userName.text = "未登录"
+            userImage.image = UIImage(named: "user_background.jpeg")
+        }
+    }
 
     //MARK - Navigation Views
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let index = (indexPath.row)
-        //collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-        if(index == 0) {
-           performSegueWithIdentifier("showCalenderSegue", sender: self)
-        } else if (index == 1){
-            performSegueWithIdentifier("showAllOrdersSegue", sender: self)
+        if(loggedIn){
+        
+            let index = (indexPath.row)
+            //collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+            if(index == 0) {
+               performSegueWithIdentifier("showCalenderSegue", sender: self)
+            } else if (index == 1){
+                performSegueWithIdentifier("showAllOrdersSegue", sender: self)
+            }
         }
         
         
@@ -106,7 +118,7 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
             index = collectionView.indexPathsForSelectedItems()
         {
             print("index is: \(index[0].row)")
-            destination.pageIndication = index[0].row
+            //destination.pageIndication = index[0].row
         }
     }
     

@@ -15,6 +15,7 @@ class Lib: NSObject {
     static let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
     static let darkerBlueColor = UIColor(red: 86/255.0, green: 197/255.0, blue: 188/255.0, alpha: 1)
     static let calenderBackgroundColor = UIColor(red: 87/255.0, green: 212/255.0, blue: 209/255.0, alpha: 1)
+    static let pageName:[String] = ["活动日程", "订单管理", "消息", "邀请有礼", "优惠礼券", "报名信息", "我的收藏", "小秘书", "设置"]
 
     static func addTextFieldBorder(textField: UITextField, width:CGFloat = CGFloat(1.2), color: UIColor=UIColor.lightGrayColor()){
         

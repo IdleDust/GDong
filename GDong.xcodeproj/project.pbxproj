@@ -21,7 +21,6 @@
 		49828A911CCD58E600CFE283 /* TeacherListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A901CCD58E600CFE283 /* TeacherListTableViewCell.swift */; };
 		49828A931CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49828A921CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift */; };
 		4986CBBF1CE548BF001C3B65 /* CalenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986CBBE1CE548BF001C3B65 /* CalenderTableViewCell.swift */; };
-		4986CBC11CE5AB1E001C3B65 /* AllOrdersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986CBC01CE5AB1E001C3B65 /* AllOrdersCollectionViewController.swift */; };
 		4986CBC31CE5AB5E001C3B65 /* AllOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986CBC21CE5AB5E001C3B65 /* AllOrdersTableViewController.swift */; };
 		4986CBC51CE5B5FE001C3B65 /* OrderDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986CBC41CE5B5FE001C3B65 /* OrderDetailTableViewCell.swift */; };
 		4986CBC71CE5B61D001C3B65 /* OrderNextStageStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986CBC61CE5B61D001C3B65 /* OrderNextStageStatusTableViewCell.swift */; };
@@ -52,7 +51,6 @@
 		49828A901CCD58E600CFE283 /* TeacherListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherListTableViewCell.swift; sourceTree = "<group>"; };
 		49828A921CCD5CE600CFE283 /* ClubActivitiesTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubActivitiesTitleTableViewCell.swift; sourceTree = "<group>"; };
 		4986CBBE1CE548BF001C3B65 /* CalenderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableViewCell.swift; sourceTree = "<group>"; };
-		4986CBC01CE5AB1E001C3B65 /* AllOrdersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllOrdersCollectionViewController.swift; sourceTree = "<group>"; };
 		4986CBC21CE5AB5E001C3B65 /* AllOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllOrdersTableViewController.swift; sourceTree = "<group>"; };
 		4986CBC41CE5B5FE001C3B65 /* OrderDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailTableViewCell.swift; sourceTree = "<group>"; };
 		4986CBC61CE5B61D001C3B65 /* OrderNextStageStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderNextStageStatusTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,14 +82,10 @@
 		493FAA531CE43853009DA287 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				4986CBC81CE68229001C3B65 /* ViewCells */,
 				490C77931CE3D2630016AD09 /* AccountManagementCollectionViewController.swift */,
 				4986CBC21CE5AB5E001C3B65 /* AllOrdersTableViewController.swift */,
-				4986CBC41CE5B5FE001C3B65 /* OrderDetailTableViewCell.swift */,
-				4986CBC61CE5B61D001C3B65 /* OrderNextStageStatusTableViewCell.swift */,
-				4986CBC01CE5AB1E001C3B65 /* AllOrdersCollectionViewController.swift */,
 				495F79D21CE52CF100D51CF9 /* CalenderTableViewController.swift */,
-				490C77971CE40A9D0016AD09 /* AccountManagementCollectionViewCell.swift */,
-				4986CBBE1CE548BF001C3B65 /* CalenderTableViewCell.swift */,
 			);
 			name = UserCenter;
 			sourceTree = "<group>";
@@ -115,6 +109,17 @@
 				49107E8E1CBC66F60044552E /* ActivityTabelViewCell.swift */,
 			);
 			name = ActivityDetail;
+			sourceTree = "<group>";
+		};
+		4986CBC81CE68229001C3B65 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				490C77971CE40A9D0016AD09 /* AccountManagementCollectionViewCell.swift */,
+				4986CBBE1CE548BF001C3B65 /* CalenderTableViewCell.swift */,
+				4986CBC41CE5B5FE001C3B65 /* OrderDetailTableViewCell.swift */,
+				4986CBC61CE5B61D001C3B65 /* OrderNextStageStatusTableViewCell.swift */,
+			);
+			name = ViewCells;
 			sourceTree = "<group>";
 		};
 		49F7A3FD1CB43B2C00448BCA = {
@@ -245,7 +250,6 @@
 				49F7A41E1CB7699D00448BCA /* Lib.swift in Sources */,
 				49F7A41C1CB7685900448BCA /* FindPasswordViewController.swift in Sources */,
 				49107E8F1CBC66F60044552E /* ActivityTabelViewCell.swift in Sources */,
-				4986CBC11CE5AB1E001C3B65 /* AllOrdersCollectionViewController.swift in Sources */,
 				490C77941CE3D2630016AD09 /* AccountManagementCollectionViewController.swift in Sources */,
 				49A8A7451CC83F0E00F8DC5D /* CommentTableViewCell.swift in Sources */,
 				49F7A40A1CB43B2C00448BCA /* AppDelegate.swift in Sources */,
