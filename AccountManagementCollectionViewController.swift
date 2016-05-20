@@ -67,11 +67,7 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
     
     //Mark - Event response
     
-    
-    
     //Mark - private methods
-    
-    
     
     //Mark - getters and setters
     func initCollectionView(){
@@ -105,6 +101,14 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
                performSegueWithIdentifier("showCalenderSegue", sender: self)
             } else if (index == 1){
                 performSegueWithIdentifier("showAllOrdersSegue", sender: self)
+            }
+            else if (index == 2) {
+                performSegueWithIdentifier("showMessagesSegue", sender: self)
+            }
+            else if (index == 5) {
+                performSegueWithIdentifier("showProfileSegue", sender: self)
+            }else if (index == 8) {
+                performSegueWithIdentifier("showSettingSegue", sender: self)
             }
         }
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllOrdersTableViewController: UITableViewController {
+class AllOrdersListTableViewController: UITableViewController {
     
     let pageTitle = Lib.pageName[1]
     
@@ -21,6 +21,7 @@ class AllOrdersTableViewController: UITableViewController {
         return UITableViewAutomaticDimension
     }
 
+    //Mark - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -79,14 +80,34 @@ class AllOrdersTableViewController: UITableViewController {
         return true
     }
 
-    /*
+    //Mark - Event response
+    
+    //Mark - private methods
+    
+    //Mark - getters and setters
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showExistingOrderDetailsSegue", sender: self)
+    }
+    
+    
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if  segue.identifier == "showExistingOrderDetailsSegue" {
+            //print("segue---")
+            if let destination = segue.destinationViewController as? ExistingOrderDetailsTableViewController{
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                   
+                    //let orderNumber = indexPath.order_number
+                    //destination.orderNumber = orderNumber
+                }
+                
+            }
+        }
     }
-    */
+    
 
 }
