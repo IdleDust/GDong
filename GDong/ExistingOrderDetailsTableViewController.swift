@@ -29,12 +29,42 @@ class ExistingOrderDetailsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if(section == 0){
+            return 1;
+        }else if(section == 1){
+            return 4;
+        }else if(section == 2){
+            return 2;
+        }else if(section == 3){
+            return 3;
+        }else if(section == 4){
+            return 3;
+        }else{
+            return 2;
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var title:String = "";
+        if(section == 1){
+            title = "支付码";
+        } else if (section == 2) {
+            title = "活动信息";
+        } else if (section == 3){
+            title = "订单信息";
+        } else if (section == 4){
+            title = "支付信息";
+        }
+        return title;
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if(indexPath.section == 0){
+            let cell = tableView.dequeueReusableCellWithIdentifier("existingOrderDetailCell0", forIndexPath: indexPath)
+            return cell
+        }
         let cell = tableView.dequeueReusableCellWithIdentifier("existingOrderDetailCell1", forIndexPath: indexPath)
-
+        
         return cell
     }
     //Mark - Event response

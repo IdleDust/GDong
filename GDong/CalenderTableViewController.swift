@@ -10,6 +10,7 @@ import UIKit
 
 class CalenderTableViewController: UITableViewController {
     
+    var pageTitle = Lib.pageName[0]
     var numberOfActivities:Int = 1
     
     //MARK - adjust cell height automatically
@@ -24,7 +25,7 @@ class CalenderTableViewController: UITableViewController {
     }
 
     func setNavigationBarTitle(){
-        self.title = Lib.pageName[0]
+        self.title = pageTitle
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(20)]
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
