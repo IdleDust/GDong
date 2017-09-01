@@ -24,11 +24,11 @@ class ExistingOrderDetailsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 6
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0){
             return 1;
         }else if(section == 1){
@@ -44,7 +44,7 @@ class ExistingOrderDetailsTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var title:String = "";
         if(section == 1){
             title = "支付码";
@@ -58,12 +58,12 @@ class ExistingOrderDetailsTableViewController: UITableViewController {
         return title;
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(indexPath.section == 0){
-            let cell = tableView.dequeueReusableCellWithIdentifier("existingOrderDetailCell0", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if((indexPath as NSIndexPath).section == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "existingOrderDetailCell0", for: indexPath)
             return cell
         }
-        let cell = tableView.dequeueReusableCellWithIdentifier("existingOrderDetailCell1", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "existingOrderDetailCell1", for: indexPath)
         
         return cell
     }

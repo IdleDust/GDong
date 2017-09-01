@@ -17,10 +17,10 @@ class Lib: NSObject {
     static let calenderBackgroundColor = UIColor(red: 87/255.0, green: 212/255.0, blue: 209/255.0, alpha: 1)
     static let pageName:[String] = ["活动日程", "订单管理", "消息", "邀请有礼", "优惠礼券", "报名信息", "我的收藏", "小秘书", "设置"]
 
-    static func addTextFieldBorder(textField: UITextField, width:CGFloat = CGFloat(1.2), color: UIColor=UIColor.lightGrayColor()){
+    static func addTextFieldBorder(_ textField: UITextField, width:CGFloat = CGFloat(1.2), color: UIColor=UIColor.lightGray){
         
         let border = CALayer()
-        border.borderColor = color.CGColor
+        border.borderColor = color.cgColor
         border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width:  textField.frame.size.width, height: textField.frame.size.height)
         
         border.borderWidth = width
@@ -28,9 +28,9 @@ class Lib: NSObject {
         textField.layer.masksToBounds = true
     }
     
-    static func addUIButtonBorder(button: UIButton){
+    static func addUIButtonBorder(_ button: UIButton){
         button.layer.borderWidth = 2.0
-        button.layer.borderColor = (UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0.61)).CGColor
+        button.layer.borderColor = (UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0.61)).cgColor
         button.layer.cornerRadius = 10
     }
     

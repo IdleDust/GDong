@@ -31,7 +31,7 @@ class SetNewPasswordViewController: UIViewController {
         Lib.addTextFieldBorder(newPassword, width: 2, color:color)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
     }
     

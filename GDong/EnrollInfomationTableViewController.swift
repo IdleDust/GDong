@@ -30,36 +30,36 @@ class EnrollInfomationTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 5
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(indexPath.row == 0){
-        let cell = tableView.dequeueReusableCellWithIdentifier("thumbImg", forIndexPath: indexPath) as! ProfileThumbImgTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if((indexPath as NSIndexPath).row == 0){
+        let cell = tableView.dequeueReusableCell(withIdentifier: "thumbImg", for: indexPath) as! ProfileThumbImgTableViewCell
             cell.thumbImage.image = UIImage(named: "user")
             return cell;
         }
         else {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("otherProfileInfo", forIndexPath: indexPath) as! ProfileOtherInfoTableViewCell
-            if(indexPath.row == 1){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "otherProfileInfo", for: indexPath) as! ProfileOtherInfoTableViewCell
+            if((indexPath as NSIndexPath).row == 1){
                 cell.cellTitle.text = "姓名"
                 cell.cellContent.text = "王小明"
-            } else if (indexPath.row == 2){
+            } else if ((indexPath as NSIndexPath).row == 2){
                 cell.cellTitle.text = "性别"
                 cell.cellContent.text = "男"
-            } else if (indexPath.row == 3){
+            } else if ((indexPath as NSIndexPath).row == 3){
                 cell.cellTitle.text = "出生年月"
                 cell.cellContent.text = "2007-09-07"
-            } else if (indexPath.row == 4){
+            } else if ((indexPath as NSIndexPath).row == 4){
                 cell.cellTitle.text = "身份证号"
                 cell.cellContent.text = "510***********0913"
         }
@@ -72,8 +72,8 @@ class EnrollInfomationTableViewController: UITableViewController {
     //Mark - private methods
     func setNavigationBarTitle(){
         self.title = pageTitle
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(20)]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 20)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     
     

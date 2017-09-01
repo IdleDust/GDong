@@ -49,15 +49,15 @@ class OrderTableViewController: UITableViewController {
         totalPriceBarButton(price)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
-        contactName.borderStyle = UITextBorderStyle.None
-        contactPhone.borderStyle = UITextBorderStyle.None
-        childName.borderStyle = UITextBorderStyle.None
-        childBirthYearAndMonth.borderStyle = UITextBorderStyle.None
-        childSexType.borderStyle = UITextBorderStyle.None
+        contactName.borderStyle = UITextBorderStyle.none
+        contactPhone.borderStyle = UITextBorderStyle.none
+        childName.borderStyle = UITextBorderStyle.none
+        childBirthYearAndMonth.borderStyle = UITextBorderStyle.none
+        childSexType.borderStyle = UITextBorderStyle.none
         
-        numOfOrders.layer.borderColor = Lib.customColor.CGColor
+        numOfOrders.layer.borderColor = Lib.customColor.cgColor
         numOfOrders.layer.borderWidth = 2.0
         
     }
@@ -75,25 +75,25 @@ class OrderTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 500
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
     //* - Custom Footer For Each Section */
-    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let footer:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        footer.contentView.backgroundColor = UIColor.lightGrayColor()
+        footer.contentView.backgroundColor = UIColor.lightGray
         footer.alpha = 0.2
         footer.textLabel!.text = ""
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat(10)
     }
 
 
     //Mark - Event response
-    @IBAction func minusOrder(sender: AnyObject) {
+    @IBAction func minusOrder(_ sender: AnyObject) {
         if(countNumOfOrders > 0){
             countNumOfOrders = countNumOfOrders - 1
             numOfOrders.text = String(countNumOfOrders)
@@ -101,7 +101,7 @@ class OrderTableViewController: UITableViewController {
         
     }
     
-    @IBAction func plusOrders(sender: AnyObject) {
+    @IBAction func plusOrders(_ sender: AnyObject) {
         countNumOfOrders = countNumOfOrders + 1
         numOfOrders.text = String(countNumOfOrders)
     }
@@ -116,51 +116,51 @@ class OrderTableViewController: UITableViewController {
     
     
     
-    @IBAction func selectWechat(sender: AnyObject) {
+    @IBAction func selectWechat(_ sender: AnyObject) {
         let checkedImage = UIImage(named: "checked")
         let uncheckedImage = UIImage(named: "unchecked")
-        if((sender.selected) != nil){
-            if(sender.selected == true){
-                wechatSelected.setBackgroundImage(uncheckedImage, forState: .Normal)
-                wechatSelected.selected = false
-                if(alipaySelected.selected == true){
+        if((sender.isSelected) != nil){
+            if(sender.isSelected == true){
+                wechatSelected.setBackgroundImage(uncheckedImage, for: UIControlState())
+                wechatSelected.isSelected = false
+                if(alipaySelected.isSelected == true){
                     paymentMethod = 2
                 } else {
                     paymentMethod = 0
                 }
             } else {
-                wechatSelected.setBackgroundImage(checkedImage, forState: .Selected)
-                wechatSelected.selected = true
+                wechatSelected.setBackgroundImage(checkedImage, for: .selected)
+                wechatSelected.isSelected = true
                 paymentMethod = 1
-                if(alipaySelected.selected == true){
-                    alipaySelected.setBackgroundImage(uncheckedImage, forState: .Normal)
-                    alipaySelected.selected = false
+                if(alipaySelected.isSelected == true){
+                    alipaySelected.setBackgroundImage(uncheckedImage, for: UIControlState())
+                    alipaySelected.isSelected = false
                 }
             }
             print(paymentMethod)
         }
     }
     
-    @IBAction func selectAlipay(sender: AnyObject) {
+    @IBAction func selectAlipay(_ sender: AnyObject) {
         let checkedImage = UIImage(named: "checked")
         let uncheckedImage = UIImage(named: "unchecked")
         
-        if((sender.selected) != nil){
-            if(sender.selected == true){
-                alipaySelected.setBackgroundImage(uncheckedImage, forState: .Normal)
-                alipaySelected.selected = false
+        if((sender.isSelected) != nil){
+            if(sender.isSelected == true){
+                alipaySelected.setBackgroundImage(uncheckedImage, for: UIControlState())
+                alipaySelected.isSelected = false
                 
-                if(wechatSelected.selected == true){
+                if(wechatSelected.isSelected == true){
                     paymentMethod = 1
                 }else {
                     paymentMethod = 0
                 }
             } else {
-                alipaySelected.setBackgroundImage(checkedImage, forState: .Selected)
-                alipaySelected.selected = true
-                if(wechatSelected.selected == true){
-                    wechatSelected.setBackgroundImage(uncheckedImage, forState: .Normal)
-                    wechatSelected.selected = false
+                alipaySelected.setBackgroundImage(checkedImage, for: .selected)
+                alipaySelected.isSelected = true
+                if(wechatSelected.isSelected == true){
+                    wechatSelected.setBackgroundImage(uncheckedImage, for: UIControlState())
+                    wechatSelected.isSelected = false
                 }
                 paymentMethod = 2
             }
@@ -170,8 +170,8 @@ class OrderTableViewController: UITableViewController {
         
     }
  
-    func paySuccess(sender: AnyObject?) {
-        performSegueWithIdentifier("paySuccessed", sender: sender)
+    func paySuccess(_ sender: AnyObject?) {
+        performSegue(withIdentifier: "paySuccessed", sender: sender)
     }
     
     
@@ -181,33 +181,33 @@ class OrderTableViewController: UITableViewController {
     //Mark - getters and setters
     
     //set bottom barbuttonitem
-    func totalPriceBarButton(price:Float){
+    func totalPriceBarButton(_ price:Float){
         let priceButton:UIButton = UIButton()
         var totalPrice = NSString(format: "%.2f", price)
-        totalPrice = (totalPrice as String) + "元"
-        priceButton.setTitle(totalPrice as String, forState: .Normal)
-        priceButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
-        priceButton.setTitleColor(Lib.customColor, forState: .Normal)
-        priceButton.frame = CGRectMake(0, 0, 100, 35)
+        totalPrice = (totalPrice as NSString)// + "元"
+        priceButton.setTitle(totalPrice as String, for: UIControlState())
+        priceButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+        priceButton.setTitleColor(Lib.customColor, for: UIControlState())
+        priceButton.frame = CGRect(x: 0, y: 0, width: 100, height: 35)
         
         totalPriceBarButton.customView = priceButton
     }
     
     func customBarbuttonitem(){
         let button:UIButton = UIButton()
-        button.setTitle("总共:", forState: .Normal)
-        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
-        button.setTitleColor(Lib.customColor, forState: .Normal)
-        button.frame = CGRectMake(0, 0, 56, 35)
+        button.setTitle("总共:", for: UIControlState())
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.right
+        button.setTitleColor(Lib.customColor, for: UIControlState())
+        button.frame = CGRect(x: 0, y: 0, width: 56, height: 35)
         totalBarButton.customView = button
         
         let payButton:UIButton = UIButton()
-        payButton.setTitle("支付", forState: .Normal)
-        payButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        payButton.setTitle("支付", for: UIControlState())
+        payButton.setTitleColor(UIColor.white, for: UIControlState())
         payButton.backgroundColor = Lib.customColor
-        payButton.frame = CGRectMake(0, 0, 100, 35)
+        payButton.frame = CGRect(x: 0, y: 0, width: 100, height: 35)
         
-        payButton.addTarget(self, action: #selector(OrderTableViewController.paySuccess), forControlEvents: UIControlEvents.TouchUpInside)
+        payButton.addTarget(self, action: #selector(OrderTableViewController.paySuccess), for: UIControlEvents.touchUpInside)
         payBarButton.customView = payButton
     }
     

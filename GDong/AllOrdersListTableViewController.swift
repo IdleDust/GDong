@@ -17,7 +17,7 @@ class AllOrdersListTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 500
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
@@ -28,7 +28,7 @@ class AllOrdersListTableViewController: UITableViewController {
         setNavigationBarTitle()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
     }
     
 
@@ -37,26 +37,26 @@ class AllOrdersListTableViewController: UITableViewController {
     }
     func setNavigationBarTitle(){
         self.title = pageTitle
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(20)]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 20)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("orderDetailCell", forIndexPath: indexPath) as! OrderDetailTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if((indexPath as NSIndexPath).row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "orderDetailCell", for: indexPath) as! OrderDetailTableViewCell
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("orderNextStepCell", forIndexPath: indexPath) as! OrderNextStageStatusTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "orderNextStepCell", for: indexPath) as! OrderNextStageStatusTableViewCell
             Lib.addUIButtonBorder(cell.orderNextStageButton)
             return cell
             
@@ -64,18 +64,18 @@ class AllOrdersListTableViewController: UITableViewController {
     }
     
     //MARK - Custom Footer For Each Section
-    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let footer:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        footer.contentView.backgroundColor = UIColor.lightGrayColor()
+        footer.contentView.backgroundColor = UIColor.lightGray
         footer.alpha = 0.2
         footer.textLabel!.text = ""
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat(10)
     }
     
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
@@ -87,18 +87,18 @@ class AllOrdersListTableViewController: UITableViewController {
     //Mark - getters and setters
     
     // MARK: - Navigation
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("showExistingOrderDetailsSegue", sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showExistingOrderDetailsSegue", sender: self)
     }
     
     
  // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if  segue.identifier == "showExistingOrderDetailsSegue" {
             //print("segue---")
-            if let destination = segue.destinationViewController as? ExistingOrderDetailsTableViewController{
+            if let destination = segue.destination as? ExistingOrderDetailsTableViewController{
                 if let indexPath = self.tableView.indexPathForSelectedRow {
                    
                     //let orderNumber = indexPath.order_number

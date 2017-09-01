@@ -20,14 +20,14 @@ class CalenderTableViewController: UITableViewController {
         tableView.backgroundColor = Lib.darkerBlueColor
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
     func setNavigationBarTitle(){
         self.title = pageTitle
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(20)]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 20)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
     
     override func viewDidLoad() {
@@ -43,11 +43,11 @@ class CalenderTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(numberOfActivities == 0){
             return numberOfActivities+1;
         } else {
@@ -56,19 +56,19 @@ class CalenderTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(numberOfActivities > 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("calenderCell", forIndexPath: indexPath) as! CalenderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell", for: indexPath) as! CalenderTableViewCell
             cell.activityTitle.text = "给你一个彩色圣诞"
             cell.activitySubtitle.text = "时间： 2015.12.25 14：00-16：30"
             cell.activityImage.image = UIImage(named: "page6")
             cell.numberOfOrders.text = "1份"
             cell.orderCode.text = "2031 5642 09"
-            cell.layer.backgroundColor = Lib.darkerBlueColor.CGColor
+            cell.layer.backgroundColor = Lib.darkerBlueColor.cgColor
             return cell
         } else {
-            let emptyCell = tableView.dequeueReusableCellWithIdentifier("emptyCalenderCell", forIndexPath: indexPath)
-            emptyCell.layer.backgroundColor = Lib.darkerBlueColor.CGColor
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "emptyCalenderCell", for: indexPath)
+            emptyCell.layer.backgroundColor = Lib.darkerBlueColor.cgColor
             return emptyCell
         }
     }

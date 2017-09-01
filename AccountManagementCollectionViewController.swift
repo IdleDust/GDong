@@ -31,34 +31,34 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
     
     
     //Mark - UICollectionView Delegate
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(_ collectionView: UICollectionView) -> Int {
         return 1
     }
     
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 9;
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cellNumber = indexPath.row
+    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+        let cellNumber = (indexPath as NSIndexPath).row
         print(cellNumber)
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("gridCell", forIndexPath: indexPath) as! AccountManagementCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gridCell", for: indexPath) as! AccountManagementCollectionViewCell
         cell.cellImage.image = imageSet![cellNumber]
         cell.cellTitle.text = Lib.pageName[cellNumber]
-        cell.layer.borderColor = UIColor.lightGrayColor().CGColor
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 1.0
         return cell
     }
     
     //set collectionview cell width and height
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         let picDimension = self.view.frame.size.width / 3.0
-        return CGSizeMake(picDimension, picDimension)
+        return CGSize(width: picDimension, height: picDimension)
     }
     
     //set inset among collectionviewcell
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         let leftRightInset = CGFloat(0)
         return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
     }
@@ -72,7 +72,7 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
     //Mark - getters and setters
     func initCollectionView(){
         screenWidth = self.view.frame.width
-        collectionView.backgroundColor = UIColor.whiteColor()
+        collectionView.backgroundColor = UIColor.white
         let imageTitle:[String] = ["calender", "order", "notification", "invitation", "coupon", "ID_card", "like", "secretary", "setting"]
         imageSet = [UIImage]()
         for i in 0..<9 {
@@ -91,24 +91,24 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
     }
 
     //MARK - Navigation Views
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if(loggedIn){
         
-            let index = (indexPath.row)
+            let index = ((indexPath as NSIndexPath).row)
             //collectionView.deselectItemAtIndexPath(indexPath, animated: true)
             if(index == 0) {
-               performSegueWithIdentifier("showCalenderSegue", sender: self)
+               performSegue(withIdentifier: "showCalenderSegue", sender: self)
             } else if (index == 1){
-                performSegueWithIdentifier("showAllOrdersSegue", sender: self)
+                performSegue(withIdentifier: "showAllOrdersSegue", sender: self)
             }
             else if (index == 2) {
-                performSegueWithIdentifier("showMessagesSegue", sender: self)
+                performSegue(withIdentifier: "showMessagesSegue", sender: self)
             }
             else if (index == 5) {
-                performSegueWithIdentifier("showProfileSegue", sender: self)
+                performSegue(withIdentifier: "showProfileSegue", sender: self)
             }else if (index == 8) {
-                performSegueWithIdentifier("showSettingSegue", sender: self)
+                performSegue(withIdentifier: "showSettingSegue", sender: self)
             }
         }
         
@@ -116,12 +116,12 @@ class AccountManagementCollectionViewController: UIViewController, UICollectionV
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == "showCalenderSegue",
-            let destination = segue.destinationViewController as? CalenderTableViewController,
-            index = collectionView.indexPathsForSelectedItems()
+            let destination = segue.destination as? CalenderTableViewController,
+            let index = collectionView.indexPathsForSelectedItems
         {
-            print("index is: \(index[0].row)")
+            print("index is: \((index[0] as NSIndexPath).row)")
             //destination.pageIndication = index[0].row
         }
     }

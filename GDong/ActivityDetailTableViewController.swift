@@ -19,7 +19,7 @@ class ActivityDetailTableViewController: UITableViewController{
     
     //MARK: variables for section0: show images in scrollview with pagecontrol
     var images:[UIImage] = []
-    var imageframe: CGRect = CGRectMake(0, 0, 0, 0)
+    var imageframe: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     var pageControl:UIPageControl?
     
     
@@ -29,7 +29,7 @@ class ActivityDetailTableViewController: UITableViewController{
         tableView.estimatedRowHeight = 300
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
@@ -48,23 +48,23 @@ class ActivityDetailTableViewController: UITableViewController{
         
         let width = self.view.frame.width
         let ratio = CGFloat(468/750.0)
-        pageControl = UIPageControl(frame: CGRectMake(0, width*ratio-20, width, 20))
+        pageControl = UIPageControl(frame: CGRect(x: 0, y: width*ratio-20, width: width, height: 20))
         configurePageControl()
         self.view.addSubview(pageControl!)
         customBarbuttonitem()
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         print("viewDidAppear")
-        pageControl!.addTarget(self, action: #selector(ActivityDetailTableViewController.changePage(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        pageControl!.addTarget(self, action: #selector(ActivityDetailTableViewController.changePage(_:)), for: UIControlEvents.valueChanged)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setToolbarHidden(true, animated: true)
         
     }
@@ -73,7 +73,7 @@ class ActivityDetailTableViewController: UITableViewController{
     override func viewDidLayoutSubviews() {
         for subView in self.view.subviews {
             if subView is UIPageControl {
-                self.view.bringSubviewToFront(subView)
+                self.view.bringSubview(toFront: subView)
             }
         }
         super.viewDidLayoutSubviews()
@@ -85,26 +85,26 @@ class ActivityDetailTableViewController: UITableViewController{
     
 
     //Mark - UITableViewDelegate
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
     //MARK - Custom Footer For Each Section
-    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let footer:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        footer.contentView.backgroundColor = UIColor.lightGrayColor()
+        footer.contentView.backgroundColor = UIColor.lightGray
         footer.alpha = 0.2
         footer.textLabel!.text = ""
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat(10)
     }
     
     
     
     //MARK: UISCROLLVIEWDELEGATE
-    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //print("Scroll view did end decelerating")
         let view = self.view.viewWithTag(101)
         if(scrollView == view){
@@ -114,15 +114,15 @@ class ActivityDetailTableViewController: UITableViewController{
     }
 
     //Mark - Event response
-    func changePage(sender: AnyObject) -> () {
+    func changePage(_ sender: AnyObject) -> () {
         //print("Change page")
         let x = CGFloat(pageControl!.currentPage) * self.view.frame.size.width
         print(x)
-        scrollView.setContentOffset(CGPointMake(x, 0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
     }
     
-    func toSignUp(sender: AnyObject?){
-        performSegueWithIdentifier("toSignUp", sender: sender)
+    func toSignUp(_ sender: AnyObject?){
+        performSegue(withIdentifier: "toSignUp", sender: sender)
     }
     
     
@@ -140,7 +140,7 @@ class ActivityDetailTableViewController: UITableViewController{
         self.pageControl!.numberOfPages = images.count
         self.pageControl!.currentPage = 0
         self.pageControl!.backgroundColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0)
-        self.pageControl!.pageIndicatorTintColor = UIColor.whiteColor()
+        self.pageControl!.pageIndicatorTintColor = UIColor.white
         self.pageControl!.currentPageIndicatorTintColor = Lib.customColor
     }
     
@@ -151,16 +151,16 @@ class ActivityDetailTableViewController: UITableViewController{
         
         for index in 0..<images.count {
             imageframe.origin.x = width * CGFloat(index)
-            let frame = CGRectMake(0, 0, width, width * ratio)
+            let frame = CGRect(x: 0, y: 0, width: width, height: width * ratio)
             imageframe.size = frame.size
-            scrollView.pagingEnabled = true
+            scrollView.isPagingEnabled = true
             
             let imageSubView = UIImageView(frame: imageframe)
             imageSubView.image = images[index]
-            imageSubView.contentMode = UIViewContentMode.ScaleAspectFill
+            imageSubView.contentMode = UIViewContentMode.scaleAspectFill
             scrollView.addSubview(imageSubView)
         }
-        scrollView.contentSize = CGSizeMake(width * CGFloat(images.count), width*ratio)
+        scrollView.contentSize = CGSize(width: width * CGFloat(images.count), height: width*ratio)
     }
 
     //Mark - getters and setters
@@ -170,17 +170,17 @@ class ActivityDetailTableViewController: UITableViewController{
     func customBarbuttonitem(){
         
         let button:UIButton = UIButton()
-        button.setTitle("109元/2人", forState: .Normal)
-        button.setTitleColor(Lib.customColor, forState: .Normal)
-        button.frame = CGRectMake(0, 0, 100, 35)
+        button.setTitle("109元/2人", for: UIControlState())
+        button.setTitleColor(Lib.customColor, for: UIControlState())
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 35)
         leftBarButton.customView = button
         
         let signUpButton:UIButton = UIButton()
-        signUpButton.setTitle("立即报名", forState: .Normal)
-        signUpButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        signUpButton.setTitle("立即报名", for: UIControlState())
+        signUpButton.setTitleColor(UIColor.white, for: UIControlState())
         signUpButton.backgroundColor = Lib.customColor
-        signUpButton.frame = CGRectMake(0, 0, 125, 35)
-        signUpButton.addTarget(self, action: #selector(ActivityDetailTableViewController.toSignUp), forControlEvents: UIControlEvents.TouchUpInside)
+        signUpButton.frame = CGRect(x: 0, y: 0, width: 125, height: 35)
+        signUpButton.addTarget(self, action: #selector(ActivityDetailTableViewController.toSignUp), for: UIControlEvents.touchUpInside)
         rightBarButton.customView = signUpButton
     }
 

@@ -24,18 +24,18 @@ class ViewController: UIViewController {
     var signUpMode = true;
     let customColor = UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 1)
     
-    @IBAction func showSignUpTable(sender: AnyObject) {
+    @IBAction func showSignUpTable(_ sender: AnyObject) {
         
         signUpMode = true;
-        SignUpIndicationButton.setTitleColor(customColor, forState: .Normal)
+        SignUpIndicationButton.setTitleColor(customColor, for: UIControlState())
         addBottomBorder(SignUpIndicationButton, tag: "signUpBottomBorder")
-        LoginIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        LoginIndicationButton.setTitleColor(UIColor.lightGray, for: UIControlState())
         deleteBottomBorder(LoginIndicationButton, tag: "loginBottomBorder")
         
-        forgetPasswordStackView.hidden = true
-        userAgreementStackView.hidden = false
-        signUpOrLoginButton.setTitle("注册", forState: .Normal)
-        textVerificationTextField.hidden = false
+        forgetPasswordStackView.isHidden = true
+        userAgreementStackView.isHidden = false
+        signUpOrLoginButton.setTitle("注册", for: UIControlState())
+        textVerificationTextField.isHidden = false
         
         
         for constraint in self.view.constraints {
@@ -44,23 +44,23 @@ class ViewController: UIViewController {
             }
             
         }
-        sendVerificationCodeButton.hidden = false
+        sendVerificationCodeButton.isHidden = false
         
 
     }
     
-    @IBAction func showLoginTable(sender: AnyObject) {
+    @IBAction func showLoginTable(_ sender: AnyObject) {
         
         signUpMode = false;
-        userAgreementStackView.hidden = true
+        userAgreementStackView.isHidden = true
         
-        LoginIndicationButton.setTitleColor(customColor, forState: .Normal)
+        LoginIndicationButton.setTitleColor(customColor, for: UIControlState())
         addBottomBorder(LoginIndicationButton, tag: "loginBottomBorder")
-        SignUpIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        SignUpIndicationButton.setTitleColor(UIColor.lightGray, for: UIControlState())
         deleteBottomBorder(SignUpIndicationButton, tag: "signUpBottomBorder")
-        forgetPasswordStackView.hidden = false
-        sendVerificationCodeButton.hidden = true
-        textVerificationTextField.hidden = true
+        forgetPasswordStackView.isHidden = false
+        sendVerificationCodeButton.isHidden = true
+        textVerificationTextField.isHidden = true
         
         for constraint in self.view.constraints {
             if constraint.identifier == "passwordTopCons" {
@@ -68,11 +68,11 @@ class ViewController: UIViewController {
             }
             
         }
-        signUpOrLoginButton.setTitle("登录", forState: .Normal)
+        signUpOrLoginButton.setTitle("登录", for: UIControlState())
     
     }
     
-    @IBAction func signUpOrLogin(sender: AnyObject) {
+    @IBAction func signUpOrLogin(_ sender: AnyObject) {
         if(signUpMode == true){
             //signing up
             print("Signning up")
@@ -80,15 +80,15 @@ class ViewController: UIViewController {
         } else {
             //Logining in
             print("logging in")
-            performSegueWithIdentifier("loginSucceed", sender: sender)
+            performSegue(withIdentifier: "loginSucceed", sender: sender)
         }
     }
     
     
-    func addBottomBorder(button: UIButton, tag: String) {
+    func addBottomBorder(_ button: UIButton, tag: String) {
         let bottomBorder = CALayer()
         let width = CGFloat(1.2)
-        bottomBorder.borderColor = customColor.CGColor
+        bottomBorder.borderColor = customColor.cgColor
         bottomBorder.frame = CGRect(x: 0, y: button.frame.size.height-width, width: button.frame.size.width, height: button.frame.size.height)
         bottomBorder.borderWidth = width
         bottomBorder.name = tag
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         button.layer.masksToBounds = true
     }
     
-    func deleteBottomBorder(button: UIButton, tag: String) {
+    func deleteBottomBorder(_ button: UIButton, tag: String) {
         for layer in button.layer.sublayers! {
             if(layer.name == tag){
                 layer.removeFromSuperlayer()
@@ -114,16 +114,16 @@ class ViewController: UIViewController {
         Lib.addTextFieldBorder(passwordTextField)
         
         sendVerificationCodeButton.layer.borderWidth = 2.0
-        sendVerificationCodeButton.layer.borderColor = (UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0.61)).CGColor
+        sendVerificationCodeButton.layer.borderColor = (UIColor(red: 99/255.0, green: 213/255.0, blue: 211/255.0, alpha: 0.61)).cgColor
         sendVerificationCodeButton.layer.cornerRadius = 10
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         if(signUpMode == true){
-            forgetPasswordStackView.hidden = true
-            SignUpIndicationButton.setTitleColor(customColor, forState: .Normal)
-            LoginIndicationButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+            forgetPasswordStackView.isHidden = true
+            SignUpIndicationButton.setTitleColor(customColor, for: UIControlState())
+            LoginIndicationButton.setTitleColor(UIColor.lightGray, for: UIControlState())
             addBottomBorder(SignUpIndicationButton, tag: "signUpBottomBorder")
         }
     }
@@ -133,10 +133,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == "loginSucceed" {
             //print("segue---")
-            if let destination = segue.destinationViewController as? UINavigationController{
+            if let destination = segue.destination as? UINavigationController{
                 if let viewContr = destination.viewControllers[0] as? AccountManagementCollectionViewController{
                     viewContr.loggedIn = true
                     //print("segue result: \(viewContr.loggedIn)")

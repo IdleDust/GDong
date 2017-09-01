@@ -14,7 +14,7 @@ class ClubDetailTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 500
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
@@ -33,12 +33,12 @@ class ClubDetailTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 3
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numOfRows = 1
         if(section == 0){
             numOfRows = 2
@@ -52,13 +52,13 @@ class ClubDetailTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let section = indexPath.section
-        let row = indexPath.row
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = (indexPath as NSIndexPath).section
+        let row = (indexPath as NSIndexPath).row
         
         if(section == 0){
             if(row == 0){
-                let cell = tableView.dequeueReusableCellWithIdentifier("clubPic", forIndexPath: indexPath) as! ClubPhotoTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "clubPic", for: indexPath) as! ClubPhotoTableViewCell
                 cell.clubPhoto.image = UIImage(named: "sea")
                 cell.clubName.text = "爱游.亲子俱乐部"
                 cell.clubSubName.text = "让你的孩子成为快乐的冒险家"
@@ -66,31 +66,31 @@ class ClubDetailTableViewController: UITableViewController {
                 cell.clubSubName.layer.zPosition = 1
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCellWithIdentifier("clubIntroduction", forIndexPath: indexPath) as! ClubIntroTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "clubIntroduction", for: indexPath) as! ClubIntroTableViewCell
                 //let ratio = CGFloat(89/100.0)
                 //cell.clubPhoto.frame = CGRectMake(0,0,self.view.frame.width, self.view.frame.width * ratio)
                 return cell
             }
         }else if(section == 1){
             if(row == 0){
-                let cell = tableView.dequeueReusableCellWithIdentifier("teacherIntro", forIndexPath: indexPath) as! TeacherIntroTitleTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "teacherIntro", for: indexPath) as! TeacherIntroTitleTableViewCell
                 return cell
             }
             else {
-                let cell = tableView.dequeueReusableCellWithIdentifier("teacherList", forIndexPath: indexPath) as! TeacherListTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "teacherList", for: indexPath) as! TeacherListTableViewCell
                 return cell
             }
         } else if(section == 2){
             if(row == 0){
-                let cell = tableView.dequeueReusableCellWithIdentifier("clubActivitiesTitle", forIndexPath: indexPath) as! ClubActivitiesTitleTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "clubActivitiesTitle", for: indexPath) as! ClubActivitiesTitleTableViewCell
                 return cell
             }
             else {
-                let cell = tableView.dequeueReusableCellWithIdentifier("clubActivities", forIndexPath: indexPath) as! ActivityTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "clubActivities", for: indexPath) as! ActivityTableViewCell
                 return cell
             }
         }else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("prototype", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "prototype", for: indexPath)
             return cell
         }
     
